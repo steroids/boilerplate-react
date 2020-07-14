@@ -1,0 +1,35 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  DEV_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  VENDOR_DIRS: 'node_modules'
+  EXCLUDE_DIRS: '.git .idea src'
+
+before_script:
+  - for DIR in $VENDOR_DIRS; do mkdir -p ../$DIR && rm -rf $DIR && mv ../$DIR .; done
+
+after_script:
+  - for DIR in $VENDOR_DIRS; do mv $DIR/ ../; done
+
+build:
+  stage: build
+  only:
+    - master
+  artifacts:
+    paths:
+      - public
+  script:
+    - yarn
+    - node webpack production
+    - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
+
+deploy_dev:
+  stage: deploy
+  only:
+    - master
+  script:
+    - ssh root@dev "mkdir -p $DEV_DEPLOY_DIR"
+    - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude
+      && rsync -rzak --exclude-from=../.rsync-exclude $CI_PROJECT_DIR/ root@dev:$DEV_DEPLOY_DIR

@@ -1,0 +1,19 @@
+{
+  "name": "boilerplate-react",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch": "node webpack",
+    "build": "node webpack production"
+  },
+  "dependencies": {
+    "@steroidsjs/bootstrap": "*",
+    "@steroidsjs/core": "*",
+    "@steroidsjs/webpack": "*",
+    "@types/react": "~16.9.0",
+    "@types/react-native": "~0.60.23",
+    "@types/webpack-env": "^1.15.1",
+    "typescript": "^3.9.6"
+  }
+}
