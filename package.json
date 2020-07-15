@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "watch": "node webpack",
-    "build": "node webpack production"
+    "build": "node webpack production",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@steroidsjs/bootstrap": "*",
@@ -14,6 +16,7 @@
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
     "@types/webpack-env": "^1.15.1",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "@storybook/react": "^5.3.19"
   }
 }
