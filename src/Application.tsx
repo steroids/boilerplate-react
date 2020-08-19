@@ -8,14 +8,9 @@ import 'style/index.scss';
 @hot(module)
 @application({
     onInit: ({ui}) => {
-        // Automatically import all views
-        ui.addViews(require.context('@steroidsjs/bootstrap', true, /View\.(j|t)sx?$/));
-        ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field\.(j|t)sx?$/));
-        ui.addFormatters(require.context('@steroidsjs/bootstrap', true, /Formatter\.(j|t)sx?$/));
-
-        // Automatically import all fields and formatters from steroids
-        ui.addFields(require.context('@steroidsjs/core/ui', true, /Field.(j|t)sx?$/));
-        ui.addFormatters(require.context('@steroidsjs/core/ui', true, /Formatter.(j|t)sx?$/));
+        ui.addViews(require('@steroidsjs/bootstrap').default);
+        ui.addFields(require('@steroidsjs/core/ui/form').default);
+        ui.addFormatters(require('@steroidsjs/core/ui/format').default);
     },
 })
 export default class Application extends React.PureComponent {

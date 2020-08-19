@@ -10,11 +10,10 @@ require('@steroidsjs/webpack')
             },
             proxy: [
                 {
-                    context: ['/api'],
+                    context: ['/api', '/backend'],
                     target: process.env.APP_BACKEND_URL || 'http://boilerplate-react.loc',
                     changeOrigin: true,
                 },
             ],
         },
-    })
-    .base(__dirname + '/src/index.tsx');
+    });

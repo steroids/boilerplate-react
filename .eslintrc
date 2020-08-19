@@ -43,14 +43,6 @@
     ],
     "comma-style": "warn",
     "block-spacing": "warn",
-    "no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "args": "after-used",
-        "ignore": ["React"]
-      }
-    ],
     "linebreak-style": 0,
     "object-curly-spacing": 0,
     "quote-props": 0,

@@ -10,13 +10,13 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@steroidsjs/bootstrap": "*",
-    "@steroidsjs/core": "*",
-    "@steroidsjs/webpack": "*",
+    "@steroidsjs/bootstrap": "^2.0.0-beta.20",
+    "@steroidsjs/core": "^2.0.0-beta.46",
+    "@steroidsjs/webpack": "^2.0.0-beta.7",
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
     "@types/webpack-env": "^1.15.1",
     "typescript": "^3.9.6",
-    "@storybook/react": "^5.3.19"
+    "@storybook/react": "^6.0.13"
   }
 }
