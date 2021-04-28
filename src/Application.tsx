@@ -1,8 +1,8 @@
 import useApplication from '@steroidsjs/core/hooks/useApplication';
-
-import 'style/index.scss';
 import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
 import MetaComponent from '@steroidsjs/core/components/MetaComponent';
+
+import 'style/index.scss';
 
 export default function Application() {
     const {renderApplication} = useApplication({

@@ -1131,10 +1131,10 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^1.7.0"
 
-"@steroidsjs/webpack@^2.0.0-rc.1":
-  version "2.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-2.0.0-rc.1.tgz#d66af8a9b21ec1ba945b267285280e5b831828b2"
-  integrity sha512-JvKdg8XZSOBg6GzOONf6KgnMIQiVtCrgwdCKbVXvejDg8OHsy6uJ3JgVXG6qIEICI8zpXcNJfvA+xTGnzBTDYQ==
+"@steroidsjs/webpack@^2.0.0-rc.2":
+  version "2.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-2.0.0-rc.3.tgz#8da76af4efd70572fa85854cb3c597729c6cce8f"
+  integrity sha512-ScyUcPR4XmbscfwuKpSAyqe+fuoZ0/DsPDtZgaekR0ODSi54Snzxwv41+ly7tfSwJ64QP/m/uUTJ7FA8VtD5sQ==
   dependencies:
     "@babel/core" "^7.11.1"
     "@babel/plugin-proposal-class-properties" "^7.10.4"
