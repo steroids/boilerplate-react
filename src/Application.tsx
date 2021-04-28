@@ -1,26 +1,29 @@
-import * as React from 'react';
-import {hot} from 'react-hot-loader';
-import Router from '@steroidsjs/core/ui/nav/Router';
-import {application} from '@steroidsjs/core/hoc';
+import useApplication from '@steroidsjs/core/hooks/useApplication';
 
 import 'style/index.scss';
+import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
+import MetaComponent from '@steroidsjs/core/components/MetaComponent';
 
-@hot(module)
-@application({
-    onInit: ({ui}) => {
-        ui.addViews(require('@steroidsjs/bootstrap').default);
-        ui.addFields(require('@steroidsjs/core/ui/form').default);
-        ui.addFormatters(require('@steroidsjs/core/ui/format').default);
-    },
-})
-export default class Application extends React.PureComponent {
+export default function Application() {
+    const {renderApplication} = useApplication({
+        reducers: require('@steroidsjs/core/reducers').default,
+        routes: require('routes').default,
+        layoutView: require('shared/Layout').default,
+        components: {
+            locale: {
+                className: LocaleComponent,
+            },
+            meta: {
+                className: MetaComponent,
+            },
+        },
+        onInit: ({ui}) => {
+            ui.addViews(require('@steroidsjs/bootstrap').default);
+            ui.addFields(require('@steroidsjs/core/ui/form').default);
+            //ui.addFormatters(require('@steroidsjs/core/ui/format').default);
+            //ui.addIcons(require('@steroidsjs/bootstrap/icon/fontawesome').default);
+        },
+    });
 
-    render() {
-        return (
-            <Router
-                wrapperView={require('shared/Layout').default}
-                routes={require('routes').default}
-            />
-        );
-    }
+    return renderApplication();
 }

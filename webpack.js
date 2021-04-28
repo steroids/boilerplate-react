@@ -1,19 +1,7 @@
-require('@steroidsjs/webpack')
-    .config({
-        port: 9991,
-        sourcePath: __dirname + '/src',
-        staticPath: '',
-        baseUrl: 'frontend/',
-        devServer: {
-            historyApiFallback: {
-                index: '/frontend/index.html',
-            },
-            proxy: [
-                {
-                    context: ['/api', '/backend'],
-                    target: process.env.APP_BACKEND_URL || 'http://boilerplate-react.loc',
-                    changeOrigin: true,
-                },
-            ],
-        },
-    });
+process.env.APP_BACKEND_URL = process.env.APP_BACKEND_URL || 'https://orion-tracking.kozhin.dev';
+
+require('@steroidsjs/webpack').config({
+    port: 9700,
+    baseUrl: 'frontend/',
+    inlineSvg: true,
+});

@@ -1,59 +1,43 @@
 import * as React from 'react';
-import {Notifications} from '@steroidsjs/core/ui/layout';
-import layout, {ILayoutHocOutput, STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hoc/layout';
 
-import {bem, components} from '@steroidsjs/core/hoc';
-import './Layout.scss';
-
-import {IComponentsHocOutput} from '@steroidsjs/core/hoc/components';
-import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
+import {useBem} from '@steroidsjs/core/hooks';
 import Header from '@steroidsjs/core/ui/layout/Header';
+import useLayout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hooks/useLayout';
 import {ROUTE_ROOT} from '../../routes';
 
-@bem('Layout')
-@components('http')
-@layout(
-    /*props => props.http.post('/api/v1/init', {
-        timestamp: Date.now(),
-    }),*/
-    () => Promise.resolve({})
-)
-export default class Layout extends React.PureComponent<IBemHocOutput & IComponentsHocOutput & ILayoutHocOutput> {
+import './Layout.scss';
 
-    static propTypes = {
-    };
+export default function Layout(props: React.PropsWithChildren<any>) {
+    const bem = useBem('Layout');
+    const {status} = useLayout();
 
-    render() {
-        const bem = this.props.bem;
-        return (
-            <div className={bem.block()}>
-                <Header
-                    logo={{
-                        title: __('Boilerplate React'),
-                    }}
-                    nav={{
-                        items: ROUTE_ROOT,
-                    }}
-                />
-                <div className={bem.element('content')}>
-                    <Notifications/>
-                    {this.renderContent()}
-                </div>
-            </div>
-        );
-    }
-
-    renderContent() {
-        switch (this.props.status) {
+    const renderContent = () => {
+        switch (status) {
             case STATUS_LOADING:
                 return null;
 
             case STATUS_OK:
-                return this.props.children;
+                return props.children;
+
+            default:
+                // TODO other statuses
+                return status;
         }
+    };
 
-        // TODO other statuses
-        return this.props.status;
-    }
-
+    return (
+        <div className={bem.block()}>
+            <Header
+                logo={{
+                    title: __('Орион Трекинг'),
+                }}
+                nav={{
+                    items: ROUTE_ROOT,
+                }}
+            />
+            <div className={bem.element('content')}>
+                {renderContent()}
+            </div>
+        </div>
+    );
 }
