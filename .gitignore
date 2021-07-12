@@ -4,8 +4,7 @@
 *.sql
 .DS_Store
 Thumbs.db
-public/assets
+public/index-lang.json
 node_modules
-lib
 !.gitempty
 /.env
