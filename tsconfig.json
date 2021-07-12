@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "lib": ["dom", "esnext"],
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "baseUrl": "."
+    "baseUrl": "./src/",
+    "allowSyntheticDefaultImports": true
   }
 }

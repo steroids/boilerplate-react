@@ -1,21 +1,14 @@
 import * as React from 'react';
-import {bem} from '@steroidsjs/core/hoc';
 
 import './IndexPage.scss';
-import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
+import {useBem} from '@steroidsjs/core/hooks';
 
-@bem('IndexPage')
-export default class IndexPage extends React.PureComponent<IBemHocOutput> {
+export default function IndexPage() {
+    const bem = useBem('IndexPage');
 
-    static propTypes = {};
-
-    render() {
-        const bem = this.props.bem;
-        return (
-            <div className={bem.block()}>
-                Hello ;)
-            </div>
-        );
-    }
-
+    return (
+        <div className={bem.block()}>
+            Hello ;)
+        </div>
+    );
 }

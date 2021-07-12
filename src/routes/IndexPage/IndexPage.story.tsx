@@ -6,6 +6,6 @@ export default {
     title: 'IndexPage',
 };
 
-export const IndexPageDemo = () => {
+export const IndexPageDemo = () => (
     <IndexPage />
-}
+);

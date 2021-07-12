@@ -11,13 +11,32 @@
 
 ##### Запуск webpack сервера
 
-1. Выполнить `npm run watch`
+1. Выполнить `yarn watch`
 2. Открыть http://localhost:9991/
 
 ##### Запуск storybook-сервера
 
-1. Выполнить `npm run storybook`
+1. Выполнить `yarn storybook`
 2. Открыть http://localhost:6006/
+
+### Замена названий
+
+Во всем проекте, включая этот файл, замени с учетом регистра на имя проекта:
+
+1. Для человеко-понятного названия: `Boilerplate12345`
+2. Для ссылок, имении БД: `boilerplate12345`
+3. Измени название проекта в IDE
+
+### Включение eslint в IDE
+
+Для WebStorm/PhpStorm идем в `Настройки` -> `Langiages & Frameworks` -> `Code Quality Tools` -> `ESLint`
+
+И включаем там пункты `Automatic ESLing configuration` и `Run eslint --fix on save`
+
+### Настройка Gitlab CI
+
+1. Создай проект в Sentry и замени `https://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@sentry.kozhindev.com/000` на верный dsn
+
 
 ## Правила кода
 

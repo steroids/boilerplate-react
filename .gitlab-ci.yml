@@ -3,25 +3,25 @@ stages:
   - deploy
 
 variables:
-  DEV_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
-  VENDOR_DIRS: 'node_modules'
-  EXCLUDE_DIRS: '.git .idea src'
-
-before_script:
-  - for DIR in $VENDOR_DIRS; do mkdir -p ../$DIR && rm -rf $DIR && mv ../$DIR .; done
-
-after_script:
-  - for DIR in $VENDOR_DIRS; do mv $DIR/ ../; done
+  DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  EXCLUDE_DIRS: '.git .idea node_modules'
 
 build:
   stage: build
-  only:
-    - master
+  cache:
+    paths:
+      - vendor
   artifacts:
     paths:
-      - public
+      - public/
+  only:
+    - master
   script:
     - yarn
+    - env > .env
+    - export APP_ENV="preview"
+    - export APP_BACKEND_URL="https://boilerplate12345.kozhin.dev"
+    - export APP_SENTRY_DSN="https://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@sentry.kozhindev.com/000"
     - node webpack production
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
 
@@ -31,5 +31,5 @@ deploy_dev:
     - master
   script:
     - ssh root@dev "mkdir -p $DEV_DEPLOY_DIR"
-    - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude
-      && rsync -rzak --exclude-from=../.rsync-exclude $CI_PROJECT_DIR/ root@dev:$DEV_DEPLOY_DIR
+    - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude && rsync -rzak --exclude-from=../.rsync-exclude $CI_PROJECT_DIR/ root@dev:$DEV_DEPLOY_DIR
+
