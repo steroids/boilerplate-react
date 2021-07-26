@@ -25,7 +25,7 @@ export default function Layout(props: React.PropsWithChildren<any>) {
         <div className={bem.block()}>
             <Header
                 logo={{
-                    title: __('Boilerplate React'),
+                    title: 'Boilerplate12345',
                 }}
                 nav={{
                     items: ROUTE_ROOT,
