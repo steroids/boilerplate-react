@@ -1,4 +1,5 @@
-# KozhinDev boilerplate react application
+
+# Boilerplate12345
 
 ## Развертывание нового приложения на основе boilerplate
 
