@@ -13,10 +13,10 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "^2.1.0-beta.2",
-    "@steroidsjs/core": "~2.2.2",
+    "@steroidsjs/bootstrap": "^2.1.18",
+    "@steroidsjs/core": "^2.2.76",
     "@steroidsjs/eslint-config": "^2.0.0-beta.4",
-    "@steroidsjs/webpack": "^2.1.0-beta.2",
+    "@steroidsjs/webpack": "^2.2.1",
     "@storybook/react": "~6.3.13",
     "@types/react": "~17.0.1",
     "@types/webpack-env": "^1.15.1",
