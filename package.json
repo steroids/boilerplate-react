@@ -1,29 +1,36 @@
 {
-  "name": "boilerplate12345",
-  "description": "Boilerplate12345",
-  "version": "1.0.0",
-  "main": "src/index.ts",
-  "license": "MIT",
-  "scripts": {
-    "watch": "node webpack",
-    "build": "node webpack production",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
-    "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "^2.1.18",
-    "@steroidsjs/core": "^2.2.76",
-    "@steroidsjs/eslint-config": "^2.0.0-beta.4",
-    "@steroidsjs/webpack": "^2.2.1",
-    "@storybook/react": "~6.3.13",
-    "@types/react": "~17.0.1",
-    "@types/webpack-env": "^1.15.1",
-    "connected-react-router": "^6.9.1",
-    "eslint": "^7.2.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "typescript": "^4.2.4"
-  }
+    "name": "kozhindev-test-exchanges",
+    "description": "kozhindev-test-exchanges",
+    "version": "1.0.0",
+    "main": "src/index.ts",
+    "license": "MIT",
+    "scripts": {
+        "watch": "node webpack",
+        "build": "node webpack production",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "@sentry/browser": "^5.27.3",
+        "@steroidsjs/bootstrap": "^2.1.18",
+        "@steroidsjs/core": "^2.2.76",
+        "@steroidsjs/eslint-config": "^2.0.0-beta.4",
+        "@steroidsjs/webpack": "^2.2.1",
+        "@storybook/react": "~6.3.13",
+        "@types/react": "~17.0.1",
+        "@types/webpack-env": "^1.15.1",
+        "connected-react-router": "^6.9.1",
+        "eslint": "^7.2.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "typescript": "^4.2.4"
+    },
+    "prettier": {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "printWidth": 120,
+        "tabWidth": 4,
+        "bracketSpacing": false
+    }
 }

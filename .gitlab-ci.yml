@@ -19,7 +19,7 @@ build:
     - yarn
     - env > .env
     - export APP_ENV="preview"
-    - export APP_BACKEND_URL="https://boilerplate12345.kozhin.dev"
+    - export APP_BACKEND_URL="https://kozhindev-test-exchanges.kozhin.dev"
 #    - export APP_SENTRY_DSN="REPLACE_WITH_REAL_SENTRY_DSN"
     - node webpack production
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
