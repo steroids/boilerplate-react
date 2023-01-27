@@ -1,4 +1,4 @@
-import {Currency} from 'core/utils/currencyList';
+import {Currency} from 'core/models';
 import {CurrencyAction, CurrencyActionTypes} from 'store/types/currency';
 import {RootState} from '.';
 

@@ -1,4 +1,4 @@
-import {Currency} from 'core/models/currency';
+import {Currency} from 'core/models';
 
 export enum CurrencyActionTypes {
     FETCH_PENDING = 'FETCH_CURRENCY_PENDING',

@@ -1,8 +1,9 @@
+import {CurrencyIso} from 'core/utils/currencyList';
 import {ExchangeRates} from '../../core/models/exchange-rates';
 
 export interface CurrencyDto {
     /** Current base currency. */
-    base: string;
+    base: CurrencyIso;
 
     /** Request Date. */
     date: string;
