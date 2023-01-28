@@ -1,5 +1,5 @@
 import {CurrencyDto} from 'api/dtos/currency.dto';
-import CurrencyPairs from 'core/models/currency-pairs';
+import {CurrencyPairs} from 'core/models';
 
 export namespace CurrencyMapper {
     /**
