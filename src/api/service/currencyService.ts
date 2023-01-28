@@ -1,4 +1,4 @@
-import {CurrencyDto} from 'api/dtos/currency.dto';
+import {CurrencyPairsDto} from 'api/dtos/currency.dto';
 import {CurrencyList, CurrencyIso} from 'core/utils/currencyList';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
 import {Currency, PairsQueryParams, CurrencyPairs, ListQueryParams} from 'core/models';
@@ -13,12 +13,10 @@ export namespace CurrencyService {
      */
     export async function fetchCurrency(pairsQueryParams: PairsQueryParams): Promise<CurrencyPairs> {
         try {
-            const {baseCurrency: base, currencyList: symbols} = pairsQueryParams;
-
-            const {data} = await http.get<CurrencyDto>(currencyUrl.toString(), {
+            const {data} = await http.get<CurrencyPairsDto>(currencyUrl.toString(), {
                 params: {
-                    base,
-                    symbols: symbols.join(','),
+                    base: pairsQueryParams.baseCurrency,
+                    symbols: pairsQueryParams.currencyList.join(','),
                 },
             });
             const currency = CurrencyMapper.fromDto(data);

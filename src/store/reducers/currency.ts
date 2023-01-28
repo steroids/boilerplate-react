@@ -5,7 +5,7 @@ import {RootState} from '.';
 /** Стейт списка валют. */
 interface CurrencyListState {
     /** Загружается ли валюта в данный момент. */
-    readonly isLoading?: boolean;
+    readonly isLoading: boolean;
 
     /** Список полученных валют. */
     readonly currencyList: Currency[];

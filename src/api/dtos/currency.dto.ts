@@ -1,19 +1,19 @@
 import {CurrencyIso} from 'core/utils/currencyList';
-import {ExchangeRates} from '../../core/models/exchange-rates';
+import {ExchangeRates} from '../../core/models';
 
-export interface CurrencyDto {
-    /** Current base currency. */
+export interface CurrencyPairsDto {
+    /** Текущая базовая валюта. */
     base: CurrencyIso;
 
-    /** Request Date. */
+    /** Дата запроса. */
     date: string;
 
-    /** List of currencies and their ratio between the base currency. */
+    /** Список валют и их соотношение между базовой валютой. */
     rates: ExchangeRates[];
 
-    /** Status of the request. */
+    /** Статус запроса. */
     success: boolean;
 
-    /** Timestamp of the last update of currency pairs. */
+    /** Временная метка последнего обновления валютных пар. */
     timestamp: number;
 }
