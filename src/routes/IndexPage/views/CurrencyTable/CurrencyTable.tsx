@@ -1,8 +1,16 @@
 import * as React from 'react';
 import './CurrencyTable.scss';
+import Grid from '@steroidsjs/core/ui/list/Grid';
 import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import getCurrencyList from 'store/actions/currency';
 import {selectorCurrencyList, selectorCurrencyListIsLoading} from 'store/reducers/currency';
+import {ListQueryParams} from 'core/models';
+import getCurrencyTable from './utils';
+
+const DEFAULT_QUERY_PARAMS: ListQueryParams = {
+    currencies: ['RUB', 'USD', 'EUR', 'CNY'],
+    numberOfCurrencies: 10,
+};
 
 export default function CurrencyTable() {
     const bem = useBem('CurrencyTable');
@@ -11,41 +19,39 @@ export default function CurrencyTable() {
     const currencyList = useSelector(selectorCurrencyList);
     const isLoading = useSelector(selectorCurrencyListIsLoading);
 
+    const table = getCurrencyTable('currencyTable', DEFAULT_QUERY_PARAMS.currencies);
+
     React.useEffect(() => {
-        dispatch(getCurrencyList(1, ['RUB', 'USD', 'EUR', 'CNY']));
-    }, [dispatch]);
+        if (currencyList.length) {
+            return;
+        }
+        dispatch(getCurrencyList(DEFAULT_QUERY_PARAMS));
+    }, [currencyList.length, dispatch]);
 
     return (
         <div className={bem.block()}>
             {isLoading ? (
                 <div>Загрузка...</div>
             ) : (
-                currencyList?.map((item, index) => (
-                    <div>
-                        <div>{item.label}</div>
-                    </div>
-                ))
+                <Grid
+                    className={bem.element('grid')}
+                    listId={table.listId}
+                    items={currencyList.map((currency) => ({
+                        id: currency.id,
+                        iso: currency.iso,
+                        label: currency.label,
+                        ...currency.currencyPairs.rates,
+                    }))}
+                    columns={table.columns}
+                    paginationSize={{
+                        defaultValue: 3,
+                        sizes: [],
+                    }}
+                    pagination={{
+                        loadMore: true,
+                    }}
+                />
             )}
-            {/* <Grid
-                listId="GridLoadMoreDemo"
-                items={[
-                    {id: 1, name: 'USD', iso: 23432},
-                    {id: 2, name: 'RUB'},
-                ]}
-                columns={[
-                    {label: '№', attribute: 'number'},
-                    {label: 'ISO', attribute: 'iso'},
-                    {label: 'Name', attribute: 'name'},
-                    {label: 'Value', attribute: 'value'},
-                ]}
-                pagination={{
-                    loadMore: true,
-                }}
-                paginationSize={{
-                    defaultValue: 2,
-                    sizes: [2, 3, 4],
-                }}
-            /> */}
         </div>
     );
 }
