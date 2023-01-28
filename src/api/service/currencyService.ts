@@ -1,9 +1,7 @@
 import {CurrencyDto} from 'api/dtos/currency.dto';
 import {CurrencyList, CurrencyIso} from 'core/utils/currencyList';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
-import {Currency, PairsQueryParams as CurrencyPairsQueryParams} from 'core/models';
-
-import CurrencyPairs from 'core/models/currency-pairs';
+import {Currency, PairsQueryParams, CurrencyPairs, ListQueryParams} from 'core/models';
 import http from '..';
 
 export namespace CurrencyService {
@@ -11,11 +9,11 @@ export namespace CurrencyService {
 
     /**
      * Извлечь валюту и ее курсы по отношению к другим валютам.
-     * @param currencyPairsQueryParams Параметры для получения соотношений валют, содержащихся в URL.
+     * @param pairsQueryParams Параметры для получения соотношений валют, содержащихся в URL.
      */
-    export async function fetchCurrency(currencyPairsQueryParams: CurrencyPairsQueryParams): Promise<CurrencyPairs> {
+    export async function fetchCurrency(pairsQueryParams: PairsQueryParams): Promise<CurrencyPairs> {
         try {
-            const {baseCurrency: base, currencyList: symbols} = currencyPairsQueryParams;
+            const {baseCurrency: base, currencyList: symbols} = pairsQueryParams;
 
             const {data} = await http.get<CurrencyDto>(currencyUrl.toString(), {
                 params: {
@@ -32,31 +30,31 @@ export namespace CurrencyService {
 
     /**
      * Получить список валют.
-     * @param numberCurrency Количество валют в списке.
-     * @param currency Валюты, с которыми сделать пары.
-     * @todo Как сделать, чтобы промис оборвался, а не создавалось 140 штук?
+     * @param listQueryParams Параметры для получения списка валют.
      */
-    export async function getCurrencyList(numberCurrency: number, currencies: CurrencyIso[]): Promise<Currency[]> {
+    export async function getCurrencyList(listQueryParams: ListQueryParams): Promise<Currency[]> {
         const currencyList: Currency[] = [];
-
-        /** @todo Создает кучу промисов. 140 штук. Нужно либо изменить подход, либо искать другую API.
-         * Либо найти способ, чтобы промисы map() остановился.
-         */
         try {
-            // const a = Object.keys(CurrencyList).map(async (iso: CurrencyIso, index) => {
-            //     if (index < numberCurrency) {
-            //         const currencyPairs = await fetchCurrency({
-            //             baseCurrency: iso,
+            // Формирует валюты, которые будут отображаться в списке.
+            Object.keys(CurrencyList).map(async (iso: CurrencyIso, index) => {
+                if (index < listQueryParams.numberOfCurrencies) {
+                    currencyList.push({
+                        id: index + 1,
+                        label: CurrencyList[iso],
+                        iso,
+                        currencyPairs: {},
+                    });
+                }
+            });
+
+            // await Promise.all(
+            //     currencyList.map(async (currency) => {
+            //         currency.currencyPairs = await fetchCurrency({
+            //             baseCurrency: currency.iso,
             //             currencyList: currencies,
             //         });
-            //         currencyList.push({
-            //             id: index + 1,
-            //             label: CurrencyList[iso],
-            //             currencyPairs,
-            //         });
-            //     }
-            // });
-            // await Promise.all(a);
+            //     }),
+            // );
             return currencyList;
         } catch (e) {
             throw new Error(e.message);

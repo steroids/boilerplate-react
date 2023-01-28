@@ -1,3 +1,14 @@
 @import '~bootstrap/scss/functions';
 @import './bootstrap/custom-variables';
 @import '~bootstrap/scss/variables';
+
+:root {
+    /* General */
+    --primary-color: #05bb65;
+
+    --secondary-color: #6b6b6b;
+    --secondary-lite-color: #d1d1d4;
+
+    /* Auxiliary colors*/
+    --error-color: #9b211b;
+}
