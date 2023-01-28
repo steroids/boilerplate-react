@@ -8,7 +8,6 @@ export namespace CurrencyMapper {
      */
     export function fromDto(dto: CurrencyDto): CurrencyPairs {
         return new CurrencyPairs({
-            baseCurrency: dto.base,
             rates: dto.rates,
             timestamp: dto.timestamp,
         });

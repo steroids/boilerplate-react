@@ -3,9 +3,6 @@ import {ExchangeRates} from './exchange-rates';
 
 /** Валютные пары. */
 export class CurrencyPairs {
-    /** Текущая базовая валюта. */
-    readonly baseCurrency: CurrencyIso;
-
     /** Курс валют относительно базовой валюты. */
     readonly rates: ExchangeRates[];
 
@@ -13,7 +10,6 @@ export class CurrencyPairs {
     readonly timestamp: number;
 
     public constructor(data: CurrencyPairs) {
-        this.baseCurrency = data.baseCurrency;
         this.rates = data.rates;
         this.timestamp = data.timestamp;
     }
@@ -22,11 +18,14 @@ export class CurrencyPairs {
 /** Валюта. */
 export interface Currency {
     /** Идентификатор валюты. */
-    id: number;
+    readonly id: number;
+
+    /** ISO валюты. */
+    readonly iso: CurrencyIso;
 
     /** Название валюты. */
-    label: string;
+    readonly label: string;
 
     /** Валютные пары. */
-    currencyPairs: CurrencyPairs;
+    currencyPairs: Partial<CurrencyPairs>;
 }
