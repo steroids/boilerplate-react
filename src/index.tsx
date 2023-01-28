@@ -5,4 +5,9 @@ import {render} from 'react-dom';
 
 import Application from './Application';
 
-render(<Application />, document.getElementById('root'));
+render(
+    <React.StrictMode>
+        <Application />
+    </React.StrictMode>,
+    document.getElementById('root'),
+);

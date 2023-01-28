@@ -6,7 +6,7 @@ import 'style/index.scss';
 
 export default function Application() {
     const {renderApplication} = useApplication({
-        reducers: require('@steroidsjs/core/reducers').default,
+        reducers: require('./store/reducers').default,
         routes: () => require('routes').default,
         layoutView: () => require('shared/Layout').default,
         screen: true,
