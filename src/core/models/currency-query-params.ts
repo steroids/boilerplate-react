@@ -1,4 +1,4 @@
-import {CurrencyIso} from 'core/utils/currencyList';
+import {CurrencyIso} from 'core/models';
 
 /** Параметры для получения валютных пар относительно базовой валюты. */
 export interface PairsQueryParams {

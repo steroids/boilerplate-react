@@ -1,5 +1,8 @@
-import {CurrencyIso} from 'core/utils/currencyList';
+import {CurrencyList} from 'core/constants/currencyList';
 import {ExchangeRates} from './exchange-rates';
+
+/** Тип валюты. */
+export type CurrencyIso = keyof typeof CurrencyList;
 
 /** Валютные пары. */
 export class CurrencyPairs {

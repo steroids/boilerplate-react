@@ -4,13 +4,8 @@ import Grid from '@steroidsjs/core/ui/list/Grid';
 import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import getCurrencyList from 'store/actions/currency';
 import {selectorCurrencyList, selectorCurrencyListIsLoading} from 'store/reducers/currency';
-import {ListQueryParams} from 'core/models';
+import {DEFAULT_QUERY_PARAMS} from 'core/constants/currencyList';
 import getCurrencyTable from './utils';
-
-const DEFAULT_QUERY_PARAMS: ListQueryParams = {
-    currencies: ['RUB', 'USD', 'EUR', 'CNY'],
-    numberOfCurrencies: 10,
-};
 
 export default function CurrencyTable() {
     const bem = useBem('CurrencyTable');
