@@ -1,10 +1,10 @@
 .CurrencyTable {
     width: 100%;
-    margin-top: 30px;
 
     &__grid {
         border: 1px solid var(--secondary-color);
-        max-width: 800px;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     &__button {
