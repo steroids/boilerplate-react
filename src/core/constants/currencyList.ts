@@ -1,3 +1,5 @@
+import {ListQueryParams} from 'core/models';
+
 export enum CurrencyList {
     AED = 'UAE Dirham',
     AFN = 'Afghan Afghani',
@@ -141,5 +143,7 @@ export enum CurrencyList {
     USD = 'United States Dollar',
 }
 
-/** Тип валюты. */
-export type CurrencyIso = keyof typeof CurrencyList;
+export const DEFAULT_QUERY_PARAMS: ListQueryParams = {
+    currencies: ['RUB', 'USD', 'EUR', 'CNY'],
+    numberOfCurrencies: 2,
+};
