@@ -6,7 +6,7 @@ export enum CurrencyActionTypes {
     FETCH_ERROR = 'FETCH_CURRENCY_ERROR',
 }
 
-interface FetchPendingAction {
+export interface FetchPendingAction {
     type: CurrencyActionTypes.FETCH_PENDING;
     payload: boolean;
 }
@@ -19,4 +19,5 @@ interface FetchSuccessAction {
     payload: Currency[];
 }
 
+/** Экшены для валюты. */
 export type CurrencyAction = FetchRejectAction | FetchPendingAction | FetchSuccessAction;

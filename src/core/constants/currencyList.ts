@@ -139,7 +139,6 @@ export enum CurrencyList {
     TOP = 'Tongan Paʻanga',
     TRY = 'Turkish Lira',
     TTD = 'Trinidad and',
-    TVD = 'Tuvaluan Dollar',
     USD = 'United States Dollar',
 }
 

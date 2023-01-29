@@ -30,7 +30,7 @@
         "typescript": "^4.2.4"
     },
     "prettier": {
-        "jsxSingleQuote":true,
+        "jsxSingleQuote": true,
         "singleQuote": true,
         "trailingComma": "all",
         "printWidth": 120,

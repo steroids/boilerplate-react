@@ -1,0 +1,10 @@
+.CurrencyConversion {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    &__select {
+        min-width: 250px;
+    }
+}
