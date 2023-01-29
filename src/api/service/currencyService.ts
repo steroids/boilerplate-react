@@ -1,7 +1,7 @@
 import {CurrencyPairsDto} from 'api/dtos/currency.dto';
-import {CurrencyList, CurrencyIso} from 'core/utils/currencyList';
+import {CurrencyList} from 'core/constants/currencyList';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
-import {Currency, PairsQueryParams, CurrencyPairs, ListQueryParams} from 'core/models';
+import {Currency, PairsQueryParams, CurrencyPairs, ListQueryParams, CurrencyIso} from 'core/models';
 import http from '..';
 
 export namespace CurrencyService {
@@ -27,29 +27,36 @@ export namespace CurrencyService {
     }
 
     /**
-     * Получить список валют.
+     * Выбрать валюты для отображения в списке.
+     * @param listQueryParams Параметры для получения списка валют.
+     */
+    export function selectCurrencies(listQueryParams: ListQueryParams) {
+        const selectCurrenciesList: Currency[] = [];
+        Object.keys(CurrencyList).map(async (iso: CurrencyIso, index) => {
+            if (index < listQueryParams.numberOfCurrencies) {
+                selectCurrenciesList.push({
+                    id: index + 1,
+                    label: CurrencyList[iso],
+                    iso,
+                    currencyPairs: {},
+                });
+            }
+        });
+        return selectCurrenciesList;
+    }
+
+    /**
+     * Получить список валют с заполненным курсом.
      * @param listQueryParams Параметры для получения списка валют.
      */
     export async function getCurrencyList(listQueryParams: ListQueryParams): Promise<Currency[]> {
-        const currencyList: Currency[] = [];
+        const currencyList = selectCurrencies(listQueryParams);
         try {
-            // Формирует валюты, которые будут отображаться в списке.
-            Object.keys(CurrencyList).map(async (iso: CurrencyIso, index) => {
-                if (index < listQueryParams.numberOfCurrencies) {
-                    currencyList.push({
-                        id: index + 1,
-                        label: CurrencyList[iso],
-                        iso,
-                        currencyPairs: {},
-                    });
-                }
-            });
-
             // await Promise.all(
             //     currencyList.map(async (currency) => {
             //         currency.currencyPairs = await fetchCurrency({
             //             baseCurrency: currency.iso,
-            //             currencyList: currencies,
+            //             currencyList: listQueryParams.currencies,
             //         });
             //     }),
             // );
