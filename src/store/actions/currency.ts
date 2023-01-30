@@ -1,7 +1,21 @@
 import {CurrencyService} from 'api/service';
 import {Dispatch} from 'react';
-import {CurrencyAction, CurrencyActionTypes} from 'store/types/currency';
-import {ListQueryParams} from 'core/models';
+import {ListQueryParams, Currency} from 'core/models';
+import {ActionsUnion, createAction} from '.';
+
+export enum CurrencyActionTypes {
+    FETCH_PENDING = 'FETCH_CURRENCY_PENDING',
+    FETCH_SUCCESS = 'FETCH_CURRENCY_SUCCESS',
+    FETCH_ERROR = 'FETCH_CURRENCY_ERROR',
+}
+
+export const Actions = {
+    fetchPendingCurrency: (isLoading: boolean) => createAction(CurrencyActionTypes.FETCH_PENDING, isLoading),
+    fetchRejectAction: (error: string) => createAction(CurrencyActionTypes.FETCH_ERROR, error),
+    fetchSuccessAction: (currencyList: Currency[]) => createAction(CurrencyActionTypes.FETCH_SUCCESS, currencyList),
+};
+
+export type CurrencyAction = ActionsUnion<typeof Actions>;
 
 /**
  * Получить список валют.
@@ -9,15 +23,11 @@ import {ListQueryParams} from 'core/models';
  */
 const getCurrencyList = (listQueryParams: ListQueryParams) => async (dispatch: Dispatch<CurrencyAction>) => {
     try {
-        dispatch({
-            type: CurrencyActionTypes.FETCH_PENDING,
-            payload: true,
-        });
-
+        dispatch(Actions.fetchPendingCurrency(true));
         const currencyList = await CurrencyService.getCurrencyList(listQueryParams);
-        dispatch({type: CurrencyActionTypes.FETCH_SUCCESS, payload: currencyList});
+        dispatch(Actions.fetchSuccessAction(currencyList));
     } catch (e) {
-        dispatch({type: CurrencyActionTypes.FETCH_ERROR, payload: e.message});
+        dispatch(Actions.fetchRejectAction(e.message));
     }
 };
 
