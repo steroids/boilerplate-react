@@ -1,4 +1,5 @@
 {
+    "homepage": "https://bkrasnov.github.io/kozhindev-test-exchanges",
     "name": "kozhindev-test-exchanges",
     "description": "kozhindev-test-exchanges",
     "version": "1.0.0",
@@ -6,6 +7,8 @@
     "license": "MIT",
     "scripts": {
         "watch": "node webpack",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist",
         "build": "node webpack production",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
@@ -40,6 +43,7 @@
         "singleAttributePerLine": false
     },
     "devDependencies": {
-        "@types/lodash": "^4.14.191"
+        "@types/lodash": "^4.14.191",
+        "gh-pages": "^5.0.0"
     }
 }
