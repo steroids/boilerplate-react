@@ -15,7 +15,6 @@ export default function CurrencyConversionForm() {
 
     return (
         <>
-            {/* {error || ( */}
             <div className={bem.block()}>
                 <CurrencyConversion
                     formName={CONVERSION_FORM_ONE}
@@ -28,7 +27,7 @@ export default function CurrencyConversionForm() {
                     oppositeFormName={CONVERSION_FORM_ONE}
                 />
             </div>
-            {/* )} */}
+            {error}
         </>
     );
 }
