@@ -1,9 +1,10 @@
-import {ListQueryParams} from 'core/models';
-
 export enum CurrencyList {
     AED = 'UAE Dirham',
+    KZT = 'Kazakhstani Tenge',
     AFN = 'Afghan Afghani',
     ALL = 'Albanian Lek',
+    RUB = 'Russian Ruble',
+    USD = 'United States Dollar',
     AMD = 'Armenian Dram',
     ANG = 'Netherlands Antillian Guilder',
     AOA = 'Angolan Kwanza',
@@ -79,7 +80,6 @@ export enum CurrencyList {
     KRW = 'South Korean',
     KWD = 'Kuwaiti Dinar',
     KYD = 'Cayman Islands',
-    KZT = 'Kazakhstani Tenge',
     LAK = 'Lao Kip',
     LBP = 'Lebanese Pound',
     LKR = 'Sri Lanka',
@@ -117,7 +117,6 @@ export enum CurrencyList {
     QAR = 'Qatari Riyal',
     RON = 'Romanian Leu',
     RSD = 'Serbian Dinar',
-    RUB = 'Russian Ruble',
     RWF = 'Rwandan Franc',
     SAR = 'Saudi Riyal',
     SBD = 'Solomon Islands',
@@ -139,10 +138,7 @@ export enum CurrencyList {
     TOP = 'Tongan Paʻanga',
     TRY = 'Turkish Lira',
     TTD = 'Trinidad and',
-    USD = 'United States Dollar',
 }
 
-export const DEFAULT_QUERY_PARAMS: ListQueryParams = {
-    currencies: ['RUB', 'USD', 'EUR', 'CNY'],
-    numberOfCurrencies: 2,
-};
+export const CONVERSION_FORM_ONE = 'formOne';
+export const CONVERSION_FORM_TWO = 'formTwo';
