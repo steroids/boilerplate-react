@@ -41,7 +41,6 @@ function CurrencyConversion(props: CurrencyConversionProps) {
     const onChangeSelect = useCallback(
         (value: number) => {
             const changedCurrency = currencyList.find((item) => item.id === value);
-
             dispatch(changeSelect(formName, changedCurrency, oppositeFormName));
         },
         [currencyList, dispatch, formName, oppositeFormName],

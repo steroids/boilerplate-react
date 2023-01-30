@@ -3,6 +3,7 @@ import {Currency, ExchangeRates} from 'core/models';
 import {Dispatch} from 'react';
 import _ from 'lodash';
 import {RootState} from 'store/reducers';
+import {StorageService} from 'api/service/storageService';
 import {ActionsUnion, createAction} from '.';
 
 const ERROR_MESSAGE = 'Данные валютных пар не загружены. Конвертация невозможна.';
@@ -93,6 +94,8 @@ export const changeSelect = (formName: string, currency: Currency, oppositeFormN
     const state = getState();
     const inputForm = getStateInput(formName, state);
     const inputOppositeForm = getStateInput(oppositeFormName, state);
+
+    StorageService.save(formName, currency);
 
     if (!_.isEmpty(currency?.rates)) {
         if (formName === CONVERSION_FORM_ONE) {
