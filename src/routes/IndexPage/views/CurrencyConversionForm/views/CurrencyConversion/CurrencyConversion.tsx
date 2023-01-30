@@ -1,78 +1,75 @@
 import React, {useCallback, useMemo} from 'react';
 import './CurrencyConversion.scss';
-import {useBem, useDispatch} from '@steroidsjs/core/hooks';
+import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import {DropDownField, NumberField} from '@steroidsjs/core/ui/form';
 
-import {CurrencyService} from 'api/service';
-import {DEFAULT_QUERY_PARAMS} from 'core/constants/currencyList';
-import updateForm from 'store/actions/converter';
-import {IFormState} from 'store/types/converter';
+import {changeInput, changeSelect, IFormState} from 'store/actions/converter';
+import {selectorCurrencyList, selectorCurrencyListIsLoading} from 'store/reducers/currency';
 
 interface CurrencyConversionProps {
-    formName: string;
     form: IFormState;
+    formName: string;
+    oppositeFormName: string;
 }
 
 function CurrencyConversion(props: CurrencyConversionProps) {
-    const {form, formName} = props;
+    const {form, formName, oppositeFormName} = props;
 
     const bem = useBem('CurrencyConversion');
     const dispatch = useDispatch();
 
-    /** @todo Использовать лист из стейта. */
-    const currencyList = CurrencyService.selectCurrencies(DEFAULT_QUERY_PARAMS);
+    const currencyList = useSelector(selectorCurrencyList);
+    const isLoading = useSelector(selectorCurrencyListIsLoading);
 
     const items = useMemo(
         () =>
             currencyList.map((item) => ({
                 id: item.id,
                 label: `${item.iso} - ${item.label}`,
+                pairs: item.rates,
             })),
         [currencyList],
     );
 
     const onChangeInput = useCallback(
-        (value: string) => {
-            dispatch(
-                updateForm({
-                    formId: formName,
-                    inputValue: value,
-                }),
-            );
+        (value: number) => {
+            dispatch(changeInput(formName, value, oppositeFormName));
         },
-        [dispatch, formName],
+        [dispatch, formName, oppositeFormName],
     );
 
     const onChangeSelect = useCallback(
-        (value: string) => {
-            dispatch(
-                updateForm({
-                    formId: formName,
-                    inputValue: form.input,
-                    /**
-                     * @todo Сюда надо передавать не ID, а отношение к рублю.
-                     * Поправить Стейт. Сделать, чтобы value было объектом, где будет id и отношение к рублю.
-                     */
-                    currencyId: Number(value),
-                }),
-            );
+        (value: number) => {
+            const changedCurrency = currencyList.find((item) => item.id === value);
+
+            dispatch(changeSelect(formName, changedCurrency, oppositeFormName));
         },
-        [dispatch, form.input, formName],
+        [currencyList, dispatch, formName, oppositeFormName],
     );
 
     return (
-        <div className={bem.block()}>
-            <NumberField type='text' className={bem.element('input')} value={form.input} onChange={onChangeInput} />
-            <div>
-                <DropDownField
-                    className={bem.element('select')}
-                    items={items}
-                    value={form.select}
-                    autoComplete
-                    onChange={onChangeSelect}
-                />
-            </div>
-        </div>
+        <>
+            {isLoading ? null : (
+                <div className={bem.block()}>
+                    <NumberField
+                        type='text'
+                        className={bem.element('input')}
+                        value={form.inputValue}
+                        onChange={onChangeInput}
+                        step={0.1}
+                    />
+                    <div>
+                        <DropDownField
+                            className={bem.element('select')}
+                            items={items}
+                            value={form.selectValue}
+                            autoComplete
+                            onChange={onChangeSelect}
+                        />
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
 
