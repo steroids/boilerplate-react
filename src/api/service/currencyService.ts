@@ -1,7 +1,7 @@
-import {CurrencyPairsDto} from 'api/dtos/currency.dto';
+import {CurrencyDto} from 'api/dtos/currency.dto';
 import {CurrencyList} from 'core/constants/currencyList';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
-import {Currency, PairsQueryParams, CurrencyPairs, ListQueryParams, CurrencyIso} from 'core/models';
+import {Currency, PairsQueryParams, ListQueryParams, CurrencyIso, ExchangeRates} from 'core/models';
 import http from '..';
 
 export namespace CurrencyService {
@@ -11,16 +11,16 @@ export namespace CurrencyService {
      * Извлечь валюту и ее курсы по отношению к другим валютам.
      * @param pairsQueryParams Параметры для получения соотношений валют, содержащихся в URL.
      */
-    export async function fetchCurrency(pairsQueryParams: PairsQueryParams): Promise<CurrencyPairs> {
+    export async function fetchRates(pairsQueryParams: PairsQueryParams): Promise<Partial<ExchangeRates>> {
         try {
-            const {data} = await http.get<CurrencyPairsDto>(currencyUrl.toString(), {
+            const {data} = await http.get<CurrencyDto>(currencyUrl.toString(), {
                 params: {
                     base: pairsQueryParams.baseCurrency,
                     symbols: pairsQueryParams.currencyList.join(','),
                 },
             });
             const currency = CurrencyMapper.fromDto(data);
-            return currency;
+            return currency.rates;
         } catch (e) {
             throw new Error(e.message);
         }
@@ -38,7 +38,6 @@ export namespace CurrencyService {
                     id: index + 1,
                     label: CurrencyList[iso],
                     iso,
-                    currencyPairs: {},
                 });
             }
         });
@@ -54,7 +53,7 @@ export namespace CurrencyService {
         try {
             // await Promise.all(
             //     currencyList.map(async (currency) => {
-            //         currency.currencyPairs = await fetchCurrency({
+            //         currency.rates = await fetchRates({
             //             baseCurrency: currency.iso,
             //             currencyList: listQueryParams.currencies,
             //         });

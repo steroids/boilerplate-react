@@ -1,14 +1,14 @@
-import {ExchangeRates} from '../../core/models';
+import {CurrencyIso, ExchangeRates} from '../../core/models';
 
-export interface CurrencyPairsDto {
+export interface CurrencyDto {
     /** Текущая базовая валюта. */
-    base: string;
+    base: CurrencyIso;
 
     /** Дата запроса. */
     date: string;
 
     /** Список валют и их соотношение между базовой валютой. */
-    rates: ExchangeRates[];
+    rates: ExchangeRates;
 
     /** Статус запроса. */
     success: boolean;
