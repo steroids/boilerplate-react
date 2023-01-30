@@ -1,5 +1,5 @@
 import {Currency} from 'core/models';
-import {CurrencyAction, CurrencyActionTypes} from 'store/types/currency';
+import {CurrencyAction, CurrencyActionTypes} from 'store/actions/currency';
 import {RootState} from '.';
 
 /** Стейт списка валют. */

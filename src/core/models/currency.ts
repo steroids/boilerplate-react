@@ -1,22 +1,11 @@
-import {CurrencyIso} from 'core/utils/currencyList';
+import {CurrencyList} from 'core/constants/currencyList';
 import {ExchangeRates} from './exchange-rates';
 
-/** Валютные пары. */
-export class CurrencyPairs {
-    /** Курс валют относительно базовой валюты. */
-    readonly rates: ExchangeRates[];
-
-    /** Временная метка последнего обновления валютных пар. */
-    readonly timestamp: number;
-
-    public constructor(data: CurrencyPairs) {
-        this.rates = data.rates;
-        this.timestamp = data.timestamp;
-    }
-}
+/** Тип валюты. */
+export type CurrencyIso = keyof typeof CurrencyList;
 
 /** Валюта. */
-export interface Currency {
+export class Currency {
     /** Идентификатор валюты. */
     readonly id: number;
 
@@ -26,6 +15,17 @@ export interface Currency {
     /** Название валюты. */
     readonly label: string;
 
-    /** Валютные пары. */
-    currencyPairs: Partial<CurrencyPairs>;
+    /** Временная метка последнего обновления валютных пар. */
+    readonly timestamp?: number;
+
+    /** Курс валют относительно базовой валюты. */
+    rates?: Partial<ExchangeRates>;
+
+    public constructor(data: Currency) {
+        this.id = data.id;
+        this.iso = data.iso;
+        this.label = data.label;
+        this.rates = data.rates;
+        this.timestamp = data.timestamp;
+    }
 }

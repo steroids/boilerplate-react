@@ -1,5 +1,5 @@
 import {IGridColumn} from '@steroidsjs/core/ui/list/Grid/Grid';
-import {CurrencyIso} from 'core/utils/currencyList';
+import {CurrencyIso} from 'core/models';
 
 interface Table {
     listId: string;

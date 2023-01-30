@@ -20,7 +20,7 @@ build:
     - env > .env
     - export APP_ENV="preview"
     - export APP_BACKEND_URL="https://kozhindev-test-exchanges.kozhin.dev"
-#    - export APP_SENTRY_DSN="REPLACE_WITH_REAL_SENTRY_DSN"
+   - export APP_SENTRY_DSN="https://a9e1a2df3d854a1ba49d295075d88efe@o4504585800515584.ingest.sentry.io/4504585803661312"
     - node webpack production
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
 

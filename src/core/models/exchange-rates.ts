@@ -1,4 +1,4 @@
-import {CurrencyIso} from 'core/utils/currencyList';
+import {CurrencyIso} from 'core/models';
 
 /** Валюты и их обменный курс. */
 export type ExchangeRates = {

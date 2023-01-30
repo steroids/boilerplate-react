@@ -9,7 +9,7 @@ import getCurrencyTable from './utils';
 
 const DEFAULT_QUERY_PARAMS: ListQueryParams = {
     currencies: ['RUB', 'USD', 'EUR', 'CNY'],
-    numberOfCurrencies: 10,
+    numberOfCurrencies: 2,
 };
 
 export default function CurrencyTable() {
@@ -40,7 +40,7 @@ export default function CurrencyTable() {
                         id: currency.id,
                         iso: currency.iso,
                         label: currency.label,
-                        ...currency.currencyPairs.rates,
+                        ...currency.rates,
                     }))}
                     columns={table.columns}
                     paginationSize={{
