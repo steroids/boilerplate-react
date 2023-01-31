@@ -1,4 +1,4 @@
-import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants/currencyList';
+import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants/constants';
 import {Currency, ExchangeRates} from 'core/models';
 import {Dispatch} from 'react';
 import _ from 'lodash';

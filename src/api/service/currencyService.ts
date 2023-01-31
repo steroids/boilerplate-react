@@ -1,5 +1,5 @@
 import {ICurrencyDto} from 'api/dtos/currency.dto';
-import {CurrencyList} from 'core/constants/currencyList';
+import {CurrencyList} from 'core/constants/constants';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
 import {Currency, IPairsQueryParams, IListQueryParams, CurrencyIso} from 'core/models';
 import http from '..';
@@ -30,7 +30,7 @@ export namespace CurrencyService {
      * Выбрать валюты для отображения в списке.
      * @param listQueryParams Параметры для получения списка валют.
      */
-    export function selectCurrencies(listQueryParams: IListQueryParams) {
+    export function selectCurrencies(listQueryParams: IListQueryParams): Currency[] {
         const selectCurrenciesList: Currency[] = [];
         Object.keys(CurrencyList).map(async (iso: CurrencyIso, index) => {
             if (index < listQueryParams.numberOfCurrencies) {
