@@ -56,15 +56,13 @@ function CurrencyConversion(props: ICurrencyConversionProps) {
                         onChange={onChangeInput}
                         step={0.1}
                     />
-                    <div>
-                        <DropDownField
-                            className={bem.element('select')}
-                            items={items}
-                            value={form.selectId}
-                            autoComplete
-                            onChange={onChangeSelect}
-                        />
-                    </div>
+                    <DropDownField
+                        className={bem.element('select')}
+                        items={items}
+                        value={form.selectId}
+                        autoComplete
+                        onChange={onChangeSelect}
+                    />
                 </div>
             )}
         </>
