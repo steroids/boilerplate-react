@@ -10,7 +10,8 @@ const ERROR_MESSAGE = 'Данные валютных пар не загруже�
 
 export interface IFormState {
     inputValue: number;
-    selectValue: Partial<ExchangeRates>;
+    currencyRates: Partial<ExchangeRates>;
+    selectId: number;
 }
 
 export enum ConverterActionTypes {
@@ -34,10 +35,10 @@ export type ConverterAction = ActionsUnion<typeof Actions>;
  */
 const getStateSelect = (name: string, state: RootState) => {
     if (name === CONVERSION_FORM_ONE) {
-        return state.converter.formOne?.selectValue;
+        return state.converter.formOne?.currencyRates;
     }
     if (name === CONVERSION_FORM_TWO) {
-        return state.converter.formTwo?.selectValue;
+        return state.converter.formTwo?.currencyRates;
     }
     return undefined;
 };
@@ -70,15 +71,16 @@ export const changeInput = (formName: string, amountOfCurrency: number, opposite
     const state = getState();
     const selectForm = getStateSelect(formName, state);
     const selectOppositeForm = getStateSelect(oppositeFormName, state);
-    const result = _.toNumber(((selectForm.USD / selectOppositeForm.USD) * amountOfCurrency).toFixed(4));
-
-    if (formName === CONVERSION_FORM_ONE) {
-        dispatch(Actions.setFormOne({inputValue: amountOfCurrency}));
-        dispatch(Actions.setFormTwo({inputValue: result}));
-    }
-    if (formName === CONVERSION_FORM_TWO) {
-        dispatch(Actions.setFormTwo({inputValue: amountOfCurrency}));
-        dispatch(Actions.setFormOne({inputValue: result}));
+    if (!_.isEmpty(selectForm) || !_.isEmpty(selectOppositeForm)) {
+        const result = _.toNumber(((selectForm.USD / selectOppositeForm.USD) * amountOfCurrency).toFixed(4));
+        if (formName === CONVERSION_FORM_ONE) {
+            dispatch(Actions.setFormOne({inputValue: amountOfCurrency}));
+            dispatch(Actions.setFormTwo({inputValue: result}));
+        }
+        if (formName === CONVERSION_FORM_TWO) {
+            dispatch(Actions.setFormTwo({inputValue: amountOfCurrency}));
+            dispatch(Actions.setFormOne({inputValue: result}));
+        }
     }
 };
 
@@ -95,15 +97,15 @@ export const changeSelect = (formName: string, currency: Currency, oppositeFormN
     const inputForm = getStateInput(formName, state);
     const inputOppositeForm = getStateInput(oppositeFormName, state);
 
-    StorageService.save(formName, currency);
+    StorageService.save(formName, currency?.id);
 
     if (!_.isEmpty(currency?.rates)) {
         if (formName === CONVERSION_FORM_ONE) {
-            dispatch(Actions.setFormOne({inputValue: inputForm, selectValue: currency?.rates}));
+            dispatch(Actions.setFormOne({inputValue: inputForm, currencyRates: currency?.rates}));
             dispatch(Actions.setFormTwo({inputValue: inputOppositeForm}));
         }
         if (formName === CONVERSION_FORM_TWO) {
-            dispatch(Actions.setFormTwo({inputValue: inputOppositeForm, selectValue: currency?.rates}));
+            dispatch(Actions.setFormTwo({inputValue: inputOppositeForm, currencyRates: currency?.rates}));
         }
     }
     if (_.isEmpty(currency?.rates)) {

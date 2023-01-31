@@ -1,3 +1,5 @@
+import {StorageService} from 'api/service/storageService';
+
 import {ConverterAction, ConverterActionTypes, IFormState} from 'store/actions/converter';
 import {RootState} from '.';
 
@@ -17,31 +19,36 @@ const initialState: ConverterState = {
     error: '',
     formOne: {
         inputValue: 0,
-        selectValue: undefined,
+        currencyRates: undefined,
+        selectId: StorageService.get<number>('formOne'),
     },
     formTwo: {
         inputValue: 0,
-        selectValue: undefined,
+        currencyRates: undefined,
+        selectId: StorageService.get<number>('formTwo'),
     },
 };
 
 export const converterForm = (state = initialState, action: ConverterAction): ConverterState => {
     switch (action.type) {
-        case ConverterActionTypes.SET_FORM_ONE:
+        case ConverterActionTypes.SET_FORM_ONE: {
             return {
                 ...state,
                 formOne: {
+                    selectId: action.payload.selectId || state.formOne.selectId,
                     inputValue: action.payload.inputValue,
-                    selectValue: action.payload.selectValue || state.formOne.selectValue,
+                    currencyRates: action.payload.currencyRates || state.formOne.currencyRates,
                 },
                 error: '',
             };
+        }
         case ConverterActionTypes.SET_FORM_TWO:
             return {
                 ...state,
                 formTwo: {
+                    selectId: action.payload.selectId || state.formOne.selectId,
                     inputValue: action.payload.inputValue,
-                    selectValue: action.payload.selectValue || state.formTwo.selectValue,
+                    currencyRates: action.payload.currencyRates || state.formTwo.currencyRates,
                 },
                 error: '',
             };
