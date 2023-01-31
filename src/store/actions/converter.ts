@@ -3,7 +3,7 @@ import {Currency, ExchangeRates} from 'core/models';
 import {Dispatch} from 'react';
 import _ from 'lodash';
 import {RootState} from 'store/reducers';
-import {StorageService} from 'api/service/storageService';
+import {StorageService} from 'api/service';
 import {ActionsUnion, createAction} from '.';
 
 const ERROR_MESSAGE = 'Данные валютных пар не загружены. Конвертация невозможна.';
