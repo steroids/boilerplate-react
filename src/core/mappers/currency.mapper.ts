@@ -1,4 +1,4 @@
-import {CurrencyDto} from 'api/dtos/currency.dto';
+import {ICurrencyDto} from 'api/dtos/currency.dto';
 import {Currency} from 'core/models';
 
 export namespace CurrencyMapper {
@@ -6,7 +6,7 @@ export namespace CurrencyMapper {
      * Maps dto to model.
      * @param dto Currency dto.
      */
-    export function fromDto(dto: CurrencyDto): Currency {
+    export function fromDto(dto: ICurrencyDto): Currency {
         return new Currency({
             id: 0,
             label: '',

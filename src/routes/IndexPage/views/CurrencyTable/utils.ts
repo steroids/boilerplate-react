@@ -1,9 +1,9 @@
 import {IGridColumn} from '@steroidsjs/core/ui/list/Grid/Grid';
 import {CurrencyIso} from 'core/models';
 
-interface Table {
-    listId: string;
-    columns: (string | IGridColumn)[];
+interface ITable {
+    readonly listId: string;
+    readonly columns: (string | IGridColumn)[];
 }
 
 /**
@@ -12,7 +12,7 @@ interface Table {
  * @param currencies Типы валют.
  * @returns Таблица с идентификатором и колонками.
  */
-function getCurrencyTable(id: string, currencies: CurrencyIso[]): Table {
+function getCurrencyTable(id: string, currencies: CurrencyIso[]): ITable {
     const currenciesColumns = currencies.map((currencyIso) => ({
         label: currencyIso,
         attribute: currencyIso,

@@ -1,6 +1,6 @@
 import {CurrencyService} from 'api/service';
 import {Dispatch} from 'react';
-import {ListQueryParams, Currency} from 'core/models';
+import {IListQueryParams, Currency} from 'core/models';
 import {ActionsUnion, createAction} from '.';
 
 export enum CurrencyActionTypes {
@@ -21,7 +21,7 @@ export type CurrencyAction = ActionsUnion<typeof Actions>;
  * Получить список валют.
  * @param listQueryParams Параметры для получения списка валют.
  */
-const getCurrencyList = (listQueryParams: ListQueryParams) => async (dispatch: Dispatch<CurrencyAction>) => {
+const getCurrencyList = (listQueryParams: IListQueryParams) => async (dispatch: Dispatch<CurrencyAction>) => {
     try {
         dispatch(Actions.fetchPendingCurrency(true));
         const currencyList = await CurrencyService.getCurrencyList(listQueryParams);

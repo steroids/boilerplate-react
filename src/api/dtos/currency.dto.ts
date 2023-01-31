@@ -1,6 +1,6 @@
 import {CurrencyIso, ExchangeRates} from '../../core/models';
 
-export interface CurrencyDto {
+export interface ICurrencyDto {
     /** Текущая базовая валюта. */
     base: CurrencyIso;
 

@@ -4,14 +4,16 @@ import Grid from '@steroidsjs/core/ui/list/Grid';
 import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import getCurrencyList from 'store/actions/currency';
 import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
-import {ListQueryParams} from 'core/models';
+import {IListQueryParams} from 'core/models';
 import getCurrencyTable from './utils';
 
 /** Дефолтные параметры для запроса. Можно менять. */
-export const DEFAULT_QUERY_PARAMS: ListQueryParams = {
+export const DEFAULT_QUERY_PARAMS: IListQueryParams = {
     currencies: ['RUB', 'USD', 'EUR', 'CNY'],
-    numberOfCurrencies: 5,
+    numberOfCurrencies: 2,
 };
+
+const DEFAULT_PAGINATION_SIZE = 3;
 
 export default function CurrencyTable() {
     const bem = useBem('CurrencyTable');
@@ -45,7 +47,7 @@ export default function CurrencyTable() {
                     }))}
                     columns={table.columns}
                     paginationSize={{
-                        defaultValue: 3,
+                        defaultValue: DEFAULT_PAGINATION_SIZE,
                         sizes: [],
                     }}
                     pagination={{

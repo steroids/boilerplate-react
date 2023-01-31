@@ -1,7 +1,7 @@
 import {CurrencyIso} from 'core/models';
 
 /** Параметры для получения валютных пар относительно базовой валюты. */
-export interface PairsQueryParams {
+export interface IPairsQueryParams {
     /** Текущая базовая валюта. */
     readonly baseCurrency: CurrencyIso;
 
@@ -10,7 +10,7 @@ export interface PairsQueryParams {
 }
 
 /** Параметры для получения списка валют. */
-export interface ListQueryParams {
+export interface IListQueryParams {
     /** Валюты, с которыми необходимо составить пары. */
     readonly currencies: CurrencyIso[];
 

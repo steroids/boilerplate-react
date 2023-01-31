@@ -7,7 +7,7 @@ import {RootState} from '.';
 const DEFAULT_SELECT_ID = 1;
 
 /** Стейт формы конвертации. */
-interface ConverterState {
+interface IConverterState {
     /** Ошибка, если данных для конвертации не существует. */
     readonly error: string;
 
@@ -18,7 +18,7 @@ interface ConverterState {
     readonly formTwo: IFormState;
 }
 
-const initialState: ConverterState = {
+const initialState: IConverterState = {
     error: '',
     formOne: {
         inputValue: 0,
@@ -32,7 +32,7 @@ const initialState: ConverterState = {
     },
 };
 
-export const converterForm = (state = initialState, action: ConverterAction): ConverterState => {
+export const converterForm = (state = initialState, action: ConverterAction): IConverterState => {
     switch (action.type) {
         case ConverterActionTypes.SET_FORM_ONE: {
             return {

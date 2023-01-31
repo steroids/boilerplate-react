@@ -6,13 +6,13 @@ import {DropDownField, NumberField} from '@steroidsjs/core/ui/form';
 import {changeInput, changeSelect, IFormState} from 'store/actions/converter';
 import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
 
-interface CurrencyConversionProps {
-    form: IFormState;
-    formName: string;
-    oppositeFormName: string;
+interface ICurrencyConversionProps {
+    readonly form: IFormState;
+    readonly formName: string;
+    readonly oppositeFormName: string;
 }
 
-function CurrencyConversion(props: CurrencyConversionProps) {
+function CurrencyConversion(props: ICurrencyConversionProps) {
     const {form, formName, oppositeFormName} = props;
 
     const bem = useBem('CurrencyConversion');

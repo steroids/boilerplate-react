@@ -3,11 +3,11 @@ import {ReducersMapObject} from 'redux';
 // From https://medium.com/@martin_hotell/improved-redux-type-safety-with-typescript-2-8-2c11a8062575
 
 interface TypedAction<T extends string> {
-    type: T;
+    readonly type: T;
 }
 
 interface AnyTypedAction<T extends string, P> extends TypedAction<T> {
-    payload: P;
+    readonly payload: P;
 }
 
 export function createAction<T extends string>(type: T): TypedAction<T>;

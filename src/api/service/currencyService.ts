@@ -1,7 +1,7 @@
-import {CurrencyDto} from 'api/dtos/currency.dto';
+import {ICurrencyDto} from 'api/dtos/currency.dto';
 import {CurrencyList} from 'core/constants/currencyList';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
-import {Currency, PairsQueryParams, ListQueryParams, CurrencyIso} from 'core/models';
+import {Currency, IPairsQueryParams, IListQueryParams, CurrencyIso} from 'core/models';
 import http from '..';
 
 export namespace CurrencyService {
@@ -11,9 +11,9 @@ export namespace CurrencyService {
      * Извлечь валюту и ее курсы по отношению к другим валютам.
      * @param pairsQueryParams Параметры для получения соотношений валют, содержащихся в URL.
      */
-    export async function fetchCurrency(pairsQueryParams: PairsQueryParams): Promise<Currency> {
+    export async function fetchCurrency(pairsQueryParams: IPairsQueryParams): Promise<Currency> {
         try {
-            const {data} = await http.get<CurrencyDto>(currencyUrl.toString(), {
+            const {data} = await http.get<ICurrencyDto>(currencyUrl.toString(), {
                 params: {
                     base: pairsQueryParams.baseCurrency,
                     symbols: pairsQueryParams.currencies.join(','),
@@ -30,7 +30,7 @@ export namespace CurrencyService {
      * Выбрать валюты для отображения в списке.
      * @param listQueryParams Параметры для получения списка валют.
      */
-    export function selectCurrencies(listQueryParams: ListQueryParams) {
+    export function selectCurrencies(listQueryParams: IListQueryParams) {
         const selectCurrenciesList: Currency[] = [];
         Object.keys(CurrencyList).map(async (iso: CurrencyIso, index) => {
             if (index < listQueryParams.numberOfCurrencies) {
@@ -48,23 +48,23 @@ export namespace CurrencyService {
      * Получить список валют с заполненным курсом.
      * @param listQueryParams Параметры для получения списка валют.
      */
-    export async function getCurrencyList(listQueryParams: ListQueryParams): Promise<Currency[]> {
+    export async function getCurrencyList(listQueryParams: IListQueryParams): Promise<Currency[]> {
         /** Валюты без данных из API. */
         const currencies = selectCurrencies(listQueryParams);
         const currencyList: Currency[] = [];
         try {
-            await Promise.all(
-                currencies.map(async (currency, index) => {
-                    const currencyInfo = await fetchCurrency({
-                        baseCurrency: currency.iso,
-                        currencies: listQueryParams.currencies,
-                    });
-                    const label = currency.label;
+            // await Promise.all(
+            //     currencies.map(async (currency, index) => {
+            //         const currencyInfo = await fetchCurrency({
+            //             baseCurrency: currency.iso,
+            //             currencies: listQueryParams.currencies,
+            //         });
+            //         const label = currency.label;
 
-                    const fullCurrency: Currency = {...currencyInfo, label, id: index + 1};
-                    currencyList.push(fullCurrency);
-                }),
-            );
+            //         const fullCurrency: Currency = {...currencyInfo, label, id: index + 1};
+            //         currencyList.push(fullCurrency);
+            //     }),
+            // );
             if (!currencyList.length) {
                 return currencies;
             }

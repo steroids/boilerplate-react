@@ -3,7 +3,7 @@ import {CurrencyAction, CurrencyActionTypes} from 'store/actions/currency';
 import {RootState} from '.';
 
 /** Стейт списка валют. */
-interface CurrencyListState {
+interface ICurrencyListState {
     /** Загружается ли валюта в данный момент. */
     readonly isLoading: boolean;
 
@@ -14,13 +14,13 @@ interface CurrencyListState {
     readonly error?: string;
 }
 
-const initialState: CurrencyListState = {
+const initialState: ICurrencyListState = {
     isLoading: false,
     currencyList: [],
     error: undefined,
 };
 
-export const currencyList = (state = initialState, action: CurrencyAction): CurrencyListState => {
+export const currencyList = (state = initialState, action: CurrencyAction): ICurrencyListState => {
     switch (action.type) {
         case CurrencyActionTypes.FETCH_PENDING:
             return {
