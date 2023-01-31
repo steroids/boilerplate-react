@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import {form, auth, fields, list, notifications, modal, router, screen} from '@steroidsjs/core/reducers';
-import {currencyList} from './currency';
-import {converterForm} from './converter';
+import {currencyList} from './reducers/currency';
+import {converterForm} from './reducers/converter';
 
 const rootReducer = combineReducers({
     currency: currencyList,
