@@ -32,6 +32,7 @@ export const currencyList = (state = initialState, action: CurrencyAction): Curr
                 ...state,
                 isLoading: false,
                 currencyList: action.payload,
+                error: undefined,
             };
         case CurrencyActionTypes.FETCH_ERROR:
             return {
@@ -44,5 +45,5 @@ export const currencyList = (state = initialState, action: CurrencyAction): Curr
     }
 };
 
-export const selectorCurrencyList = (state: RootState) => state.currency.currencyList;
-export const selectorCurrencyListIsLoading = (state: RootState) => state.currency.isLoading;
+export const selectCurrencyList = (state: RootState) => state.currency.currencyList;
+export const selectCurrencyListIsLoading = (state: RootState) => state.currency.isLoading;

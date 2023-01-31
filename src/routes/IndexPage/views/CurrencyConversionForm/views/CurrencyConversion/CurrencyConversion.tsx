@@ -4,7 +4,7 @@ import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import {DropDownField, NumberField} from '@steroidsjs/core/ui/form';
 
 import {changeInput, changeSelect, IFormState} from 'store/actions/converter';
-import {selectorCurrencyList, selectorCurrencyListIsLoading} from 'store/reducers/currency';
+import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
 
 interface CurrencyConversionProps {
     form: IFormState;
@@ -18,16 +18,15 @@ function CurrencyConversion(props: CurrencyConversionProps) {
     const bem = useBem('CurrencyConversion');
     const dispatch = useDispatch();
 
-    const currencyList = useSelector(selectorCurrencyList);
-    const isLoading = useSelector(selectorCurrencyListIsLoading);
+    const currencyList = useSelector(selectCurrencyList);
+    const isLoading = useSelector(selectCurrencyListIsLoading);
 
     const items = useMemo(
-        () =>
-            currencyList.map((item) => ({
-                id: item.id,
-                label: `${item.iso} - ${item.label}`,
-                pairs: item.rates,
-            })),
+        () => currencyList.map((item) => ({
+            id: item.id,
+            label: `${item.iso} - ${item.label}`,
+            pairs: item.rates,
+        })),
         [currencyList],
     );
 
@@ -61,7 +60,7 @@ function CurrencyConversion(props: CurrencyConversionProps) {
                         <DropDownField
                             className={bem.element('select')}
                             items={items}
-                            value={form.selectValue}
+                            value={form.selectId}
                             autoComplete
                             onChange={onChangeSelect}
                         />

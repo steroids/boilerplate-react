@@ -5,8 +5,8 @@ export interface PairsQueryParams {
     /** Текущая базовая валюта. */
     readonly baseCurrency: CurrencyIso;
 
-    /** Список валют, относительно которых будут получен курс с базовой. */
-    readonly currencyList: readonly CurrencyIso[];
+    /** Валюты, относительно которых будут получен курс с базовой. */
+    readonly currencies: CurrencyIso[];
 }
 
 /** Параметры для получения списка валют. */

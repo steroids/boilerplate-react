@@ -19,7 +19,7 @@ export class Currency {
     readonly timestamp?: number;
 
     /** Курс валют относительно базовой валюты. */
-    rates?: Partial<ExchangeRates>;
+    readonly rates?: Partial<ExchangeRates>;
 
     public constructor(data: Currency) {
         this.id = data.id;
