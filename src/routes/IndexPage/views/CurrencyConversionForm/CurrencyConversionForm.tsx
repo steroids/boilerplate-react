@@ -2,19 +2,25 @@ import * as React from 'react';
 import './CurrencyConversionForm.scss';
 import {useBem, useSelector} from '@steroidsjs/core/hooks';
 
-import {selectorError, selectorFormOne, selectorFormTwo} from 'store/reducers/converter';
+import {selectError, selectFormOne, selectFormTwo} from 'store/reducers/converter';
 import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants/currencyList';
+import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
 import CurrencyConversion from './views/CurrencyConversion';
 
 export default function CurrencyConversionForm() {
     const bem = useBem('CurrencyConversionForm');
 
-    const formOne = useSelector(selectorFormOne);
-    const formTwo = useSelector(selectorFormTwo);
-    const error = useSelector(selectorError);
+    const formOne = useSelector(selectFormOne);
+    const formTwo = useSelector(selectFormTwo);
+    const error = useSelector(selectError);
+    const currencyList = useSelector(selectCurrencyList);
+    const isLoading = useSelector(selectCurrencyListIsLoading);
 
     return (
         <>
+            {error && !currencyList[0]?.rates && !isLoading ? (
+                <div className={bem.element('error')}>{error}</div>
+            ) : null}
             <div className={bem.block()}>
                 <CurrencyConversion
                     formName={CONVERSION_FORM_ONE}
@@ -27,7 +33,6 @@ export default function CurrencyConversionForm() {
                     oppositeFormName={CONVERSION_FORM_ONE}
                 />
             </div>
-            {error}
         </>
     );
 }
