@@ -1,10 +1,14 @@
 import * as React from 'react';
-import './Header.scss';
+
 import {Button} from '@steroidsjs/core/ui/form';
 import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
+
 import getCurrencyList from 'store/actions/currency';
 import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
+
 import {DEFAULT_QUERY_PARAMS} from '../../routes/IndexPage/views/CurrencyTable';
+
+import './Header.scss';
 
 const MILLISECOND = 1000;
 

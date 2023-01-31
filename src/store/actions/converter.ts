@@ -1,10 +1,14 @@
-import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants/constants';
-import {Currency, ExchangeRates} from 'core/models';
 import {Dispatch} from 'react';
+
 import _ from 'lodash';
-import {RootState} from 'store/reducers';
+
+import {RootState} from 'store';
+
 import {StorageService} from 'api/service';
-import {ActionsUnion, createAction} from '.';
+import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants';
+import {Currency, ExchangeRates} from 'core/models';
+
+import {ActionsUnion, createAction} from '../action-type';
 
 const ERROR_MESSAGE = 'Данные валютных пар не загружены. Конвертация невозможна.';
 

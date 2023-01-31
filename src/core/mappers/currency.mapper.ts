@@ -3,8 +3,8 @@ import {Currency} from 'core/models';
 
 export namespace CurrencyMapper {
     /**
-     * Maps dto to model.
-     * @param dto Currency dto.
+     * Сопоставляет dto с моделью.
+     * @param dto Валюта dto.
      */
     export function fromDto(dto: ICurrencyDto): Currency {
         return new Currency({

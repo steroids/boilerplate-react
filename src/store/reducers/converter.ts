@@ -1,8 +1,9 @@
-import {StorageService} from 'api/service';
-import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants/constants';
-
 import {ConverterAction, ConverterActionTypes, IFormState} from 'store/actions/converter';
-import {RootState} from '.';
+
+import {StorageService} from 'api/service';
+import {CONVERSION_FORM_ONE, CONVERSION_FORM_TWO} from 'core/constants';
+
+import {RootState} from '..';
 
 const DEFAULT_SELECT_ID = 1;
 

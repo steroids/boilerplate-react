@@ -1,5 +1,5 @@
 import {ICurrencyDto} from 'api/dtos/currency.dto';
-import {CurrencyList} from 'core/constants/constants';
+import {CurrencyList} from 'core/constants';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
 import {Currency, IPairsQueryParams, IListQueryParams, CurrencyIso} from 'core/models';
 import http from '..';

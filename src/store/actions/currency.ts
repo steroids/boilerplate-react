@@ -1,7 +1,8 @@
-import {CurrencyService} from 'api/service';
 import {Dispatch} from 'react';
+
+import {CurrencyService} from 'api/service';
 import {IListQueryParams, Currency} from 'core/models';
-import {ActionsUnion, createAction} from '.';
+import {ActionsUnion, createAction} from '../action-type';
 
 export enum CurrencyActionTypes {
     FETCH_PENDING = 'FETCH_CURRENCY_PENDING',

@@ -1,11 +1,15 @@
 import * as React from 'react';
-import './CurrencyTable.scss';
+
 import Grid from '@steroidsjs/core/ui/list/Grid';
 import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
+
 import getCurrencyList from 'store/actions/currency';
 import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
+
 import {IListQueryParams} from 'core/models';
 import getCurrencyTable from './utils';
+
+import './CurrencyTable.scss';
 
 /** Дефолтные параметры для запроса. Можно менять. */
 export const DEFAULT_QUERY_PARAMS: IListQueryParams = {
@@ -25,13 +29,12 @@ export default function CurrencyTable() {
     const table = getCurrencyTable('currencyTable', DEFAULT_QUERY_PARAMS.currencies);
 
     const items = React.useMemo(
-        () =>
-            currencyList.map((currency) => ({
-                id: currency.id,
-                iso: currency.iso,
-                label: currency.label,
-                ...currency.rates,
-            })),
+        () => currencyList.map((currency) => ({
+            id: currency.id,
+            iso: currency.iso,
+            label: currency.label,
+            ...currency.rates,
+        })),
         [currencyList],
     );
 

@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 import {useBem} from '@steroidsjs/core/hooks';
-
 import {Notifications} from '@steroidsjs/core/ui/layout';
 
-import './Layout.scss';
 import Header from 'shared/Header';
+
+import './Layout.scss';
 
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');

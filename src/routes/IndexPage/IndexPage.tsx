@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import './IndexPage.scss';
 import {useBem} from '@steroidsjs/core/hooks';
 
 import CurrencyTable from './views/CurrencyTable';
 import CurrencyConversionForm from './views/CurrencyConversionForm';
+
+import './IndexPage.scss';
 
 export default function IndexPage() {
     const bem = useBem('IndexPage');

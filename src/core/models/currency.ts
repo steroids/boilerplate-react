@@ -1,4 +1,4 @@
-import {CurrencyList} from 'core/constants/constants';
+import {CurrencyList} from 'core/constants';
 import {ExchangeRates} from './exchange-rates';
 
 /** Тип валюты. */

@@ -1,6 +1,8 @@
-import {Currency} from 'core/models';
 import {CurrencyAction, CurrencyActionTypes} from 'store/actions/currency';
-import {RootState} from '.';
+
+import {Currency} from 'core/models';
+
+import {RootState} from '..';
 
 /** Стейт списка валют. */
 interface ICurrencyListState {

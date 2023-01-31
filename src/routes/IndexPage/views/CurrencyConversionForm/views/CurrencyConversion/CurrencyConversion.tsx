@@ -1,10 +1,12 @@
 import React, {useCallback, useMemo} from 'react';
-import './CurrencyConversion.scss';
+
 import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import {DropDownField, NumberField} from '@steroidsjs/core/ui/form';
 
 import {changeInput, changeSelect, IFormState} from 'store/actions/converter';
 import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/currency';
+
+import './CurrencyConversion.scss';
 
 interface ICurrencyConversionProps {
     readonly form: IFormState;
