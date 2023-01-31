@@ -53,18 +53,18 @@ export namespace CurrencyService {
         const currencies = selectCurrencies(listQueryParams);
         const currencyList: Currency[] = [];
         try {
-            // await Promise.all(
-            //     currencies.map(async (currency, index) => {
-            //         const currencyInfo = await fetchCurrency({
-            //             baseCurrency: currency.iso,
-            //             currencies: listQueryParams.currencies,
-            //         });
-            //         const label = currency.label;
+            await Promise.all(
+                currencies.map(async (currency, index) => {
+                    const currencyInfo = await fetchCurrency({
+                        baseCurrency: currency.iso,
+                        currencies: listQueryParams.currencies,
+                    });
+                    const label = currency.label;
 
-            //         const fullCurrency: Currency = {...currencyInfo, label, id: index + 1};
-            //         currencyList.push(fullCurrency);
-            //     }),
-            // );
+                    const fullCurrency: Currency = {...currencyInfo, label, id: index + 1};
+                    currencyList.push(fullCurrency);
+                }),
+            );
             if (!currencyList.length) {
                 return currencies;
             }

@@ -14,7 +14,7 @@ import './CurrencyTable.scss';
 /** Дефолтные параметры для запроса. Можно менять. */
 export const DEFAULT_QUERY_PARAMS: IListQueryParams = {
     currencies: ['RUB', 'USD', 'EUR', 'CNY'],
-    numberOfCurrencies: 25,
+    numberOfCurrencies: 20,
 };
 
 const DEFAULT_PAGINATION_SIZE = 4;
