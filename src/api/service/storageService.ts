@@ -20,6 +20,9 @@ export namespace StorageService {
         if (rawData == null) {
             return null;
         }
+        if (rawData === 'undefined') {
+            return undefined;
+        }
         return JSON.parse(rawData) as T;
     }
 }
