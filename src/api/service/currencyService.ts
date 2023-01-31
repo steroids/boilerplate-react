@@ -11,16 +11,16 @@ export namespace CurrencyService {
      * Извлечь валюту и ее курсы по отношению к другим валютам.
      * @param pairsQueryParams Параметры для получения соотношений валют, содержащихся в URL.
      */
-    export async function fetchRates(pairsQueryParams: PairsQueryParams): Promise<Partial<ExchangeRates>> {
+    export async function fetchCurrency(pairsQueryParams: PairsQueryParams): Promise<Currency> {
         try {
             const {data} = await http.get<CurrencyDto>(currencyUrl.toString(), {
                 params: {
                     base: pairsQueryParams.baseCurrency,
-                    symbols: pairsQueryParams.currencyList.join(','),
+                    symbols: pairsQueryParams.currencies.join(','),
                 },
             });
             const currency = CurrencyMapper.fromDto(data);
-            return currency.rates;
+            return currency;
         } catch (e) {
             throw new Error(e.message);
         }
@@ -49,16 +49,25 @@ export namespace CurrencyService {
      * @param listQueryParams Параметры для получения списка валют.
      */
     export async function getCurrencyList(listQueryParams: ListQueryParams): Promise<Currency[]> {
-        const currencyList = selectCurrencies(listQueryParams);
+        /** Валюты без данных из API. */
+        const currencies = selectCurrencies(listQueryParams);
+        const currencyList: Currency[] = [];
         try {
-            // await Promise.all(
-            //     currencyList.map(async (currency) => {
-            //         currency.rates = await fetchRates({
-            //             baseCurrency: currency.iso,
-            //             currencyList: listQueryParams.currencies,
-            //         });
-            //     }),
-            // );
+            await Promise.all(
+                currencies.map(async (currency, index) => {
+                    const currencyInfo = await fetchCurrency({
+                        baseCurrency: currency.iso,
+                        currencies: listQueryParams.currencies,
+                    });
+                    const label = currency.label;
+
+                    const fullCurrency: Currency = {...currencyInfo, label, id: index + 1};
+                    currencyList.push(fullCurrency);
+                }),
+            );
+            if (!currencyList.length) {
+                return currencies;
+            }
             return currencyList;
         } catch (e) {
             throw new Error(e.message);
