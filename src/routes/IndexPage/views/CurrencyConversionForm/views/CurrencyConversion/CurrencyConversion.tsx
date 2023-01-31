@@ -22,12 +22,11 @@ function CurrencyConversion(props: CurrencyConversionProps) {
     const isLoading = useSelector(selectCurrencyListIsLoading);
 
     const items = useMemo(
-        () =>
-            currencyList.map((item) => ({
-                id: item.id,
-                label: `${item.iso} - ${item.label}`,
-                pairs: item.rates,
-            })),
+        () => currencyList.map((item) => ({
+            id: item.id,
+            label: `${item.iso} - ${item.label}`,
+            pairs: item.rates,
+        })),
         [currencyList],
     );
 

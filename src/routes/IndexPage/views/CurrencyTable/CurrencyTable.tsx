@@ -7,6 +7,7 @@ import {selectCurrencyList, selectCurrencyListIsLoading} from 'store/reducers/cu
 import {ListQueryParams} from 'core/models';
 import getCurrencyTable from './utils';
 
+/** Дефолтные параметры для запроса. Можно менять. */
 export const DEFAULT_QUERY_PARAMS: ListQueryParams = {
     currencies: ['RUB', 'USD', 'EUR', 'CNY'],
     numberOfCurrencies: 2,

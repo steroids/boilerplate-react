@@ -1,7 +1,7 @@
 import {CurrencyDto} from 'api/dtos/currency.dto';
 import {CurrencyList} from 'core/constants/currencyList';
 import {CurrencyMapper} from 'core/mappers/currency.mapper';
-import {Currency, PairsQueryParams, ListQueryParams, CurrencyIso, ExchangeRates} from 'core/models';
+import {Currency, PairsQueryParams, ListQueryParams, CurrencyIso} from 'core/models';
 import http from '..';
 
 export namespace CurrencyService {
