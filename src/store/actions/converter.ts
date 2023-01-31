@@ -80,7 +80,6 @@ export const changeInput = (formName: string, amountOfCurrency: number, opposite
         if (formName === CONVERSION_FORM_ONE) {
             dispatch(Actions.setFormOne({inputValue: amountOfCurrency}));
             dispatch(Actions.setFormTwo({inputValue: result}));
-            dispatch(Actions.setFormOne({currencyRates: selectForm}));
         }
         if (formName === CONVERSION_FORM_TWO) {
             dispatch(Actions.setFormTwo({inputValue: amountOfCurrency}));
