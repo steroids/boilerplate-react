@@ -1,8 +1,8 @@
 /// <reference types="@steroidsjs/core/index" />
 
 import * as React from 'react';
-import {render} from 'react-dom';
-
+import {createRoot} from 'react-dom/client';
 import Application from './Application';
 
-render(<Application />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<Application />);
