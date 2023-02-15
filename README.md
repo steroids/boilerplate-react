@@ -29,11 +29,6 @@
 1. Выполнить `yarn watch`
 2. Открыть http://localhost:9991/
 
-##### Запуск storybook-сервера
-
-1. Выполнить `yarn storybook`
-2. Открыть http://localhost:6006/
-
 
 ### Включение eslint в IDE
 
@@ -57,7 +52,6 @@
 Каждый компонент должен быть расположен в отдельной одноименной папке `UpperMenu`
 В этой папке должны быть следующие файлы:
 - `UpperMenu.scss` - файл со стилями для этого компонента
-- `UpperMenu.story.js` - storybook для компонента
 - `UpperMenu.tsx` - собственно сам компонент
 - `index.ts` - файл, экспортирующий данный компонент - для того, чтобы в других компонентах при импорте `UpperMenu`
   не нужно было писать путь, включающий папку `UpperMenu`
@@ -93,12 +87,29 @@
 "UpperMenu" должен быть создан файл `UpperMenu.scss`, в котором должен быть определен блок css-классов UpperMenu,
 и все правила стилей должны задаваться для этого блока, его элементов и/или модификаторов.
 
-#### Storybook
+## Обновление проекта до steroids v3
 
-Для каждого компонента должен быть создан storybook-файл `*.story.js`
+1. Запустить команду:
+```
+yarn add @steroidsjs/core@3.x
+```
 
-В нем необходимо представить компонент в различных вариантах, чтобы можно было в едином месте просмотреть все возможные
-виды компонента с разными настройками.
+2. Выбрать и установить последнюю версию @steroidsjs/core
 
-Например, если компонент - кнопка, то нужно в storybook-файле показать кнопку обычную, в нажатом виде,
-с наведением курсора, и пр.
+2. Запустить команду:
+```
+yarn add @steroidsjs/bootstrap @steroidsjs/webpack react react-dom @types/react @types/react-dom
+```
+
+3. Изменить код в файле src/index.tsx на этот
+
+```
+import * as React from 'react';
+import {createRoot} from 'react-dom/client';
+import Application from './Application';
+
+const root = createRoot(document.getElementById('root'));
+root.render(<Application />);
+```
+
+4. Исправить ошибки typescript
