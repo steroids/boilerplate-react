@@ -13,7 +13,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@sentry/browser": "^5.27.3",
     "@steroidsjs/bootstrap": "^3.0 || >=3.0.0-beta.26",
-    "@steroidsjs/core": "^3.0.0-beta.9",
+    "@steroidsjs/core": "^3.0.0-beta.11",
     "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.1",
     "connected-react-router": "^6.9.1",
     "lodash": "^4.17.21",

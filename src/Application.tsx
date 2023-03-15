@@ -17,6 +17,7 @@ export default function Application() {
         },
         onInit: ({ui}) => {
             ui.addViews(require('./ui/bootstrap').default);
+            ui.addFields(require('@steroidsjs/core/ui/form').default);
             ui.addFormatters(require('@steroidsjs/core/ui/format').default);
             ui.addIcons(require('@steroidsjs/bootstrap/icons/index').default(customIcons));
         },
