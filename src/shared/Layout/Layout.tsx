@@ -5,17 +5,15 @@ import useLayout, {STATUS_OK, STATUS_LOADING} from '@steroidsjs/core/hooks/useLa
 
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
+import {ROUTE_ROOT} from '../../routes';
 
 import './Layout.scss';
-import {ROUTE_ROOT} from '../../routes';
 
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');
 
     //const components = useComponents();
-    const {status} = useLayout(/*() => components.http.post('/api/v1/init', {
-        timestamp: Date.now(),
-    })*/);
+    const {status} = useLayout(/*() => components.http.post('/api/v1/init')*/);
 
     if (status !== STATUS_OK) {
         return status !== STATUS_LOADING ? status : null;

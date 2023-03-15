@@ -8,3 +8,7 @@ public/index-lang.json
 node_modules
 !.gitempty
 /.env
+public/bundle-all.js
+public/stats.json
+public/server.js
+public/frontend/*

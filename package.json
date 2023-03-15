@@ -12,8 +12,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "^3.0 || >=3.0.0-beta.1",
-    "@steroidsjs/core": "^3.0.0-beta.4",
+    "@steroidsjs/bootstrap": "^3.0 || >=3.0.0-beta.26",
+    "@steroidsjs/core": "^3.0.0-beta.9",
     "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.1",
     "connected-react-router": "^6.9.1",
     "lodash": "^4.17.21",
@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@steroidsjs/eslint-config": "^2.1.3",
+    "@steroidsjs/eslint-config": "^2.1.4",
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",

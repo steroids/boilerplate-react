@@ -1816,14 +1816,13 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0 || >=3.0.0-beta.1":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.2.tgz#d4935bc29872f75f71422dced0799ee11c38e856"
-  integrity sha512-Yd4NnO4OcxUQ8zrVyXaJLE5Cpr6P/jqsDeaTIRVGbZlWY0DNDTKYD5s7aME9Ly9owRoJM8YpMkVaFpMAKtEjJg==
+"@steroidsjs/bootstrap@^3.0 || >=3.0.0-beta.26":
+  version "3.0.0-beta.26"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.26.tgz#bee3eeeb0b2d6ec279433ecc77aa96b93ef76796"
+  integrity sha512-IaVgv0lrLaqbSORSy/RlgH4ECWtMuygqWNc5rwlZL6qVW+DDJ1Q+lYyuo0UazyAW1CsDJWGJG7kxn1yQ17pcYw==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
-    bootstrap "^4.5.2"
     date-fns "^2.29.3"
     lodash "^4.17.20"
     lodash-es "^4.17.20"
@@ -1835,6 +1834,7 @@
     react-image-crop "^9.0.2"
     react-modal "^3.11.2"
     react-transition-group "^2.9.0"
+    react-use "^17.4.0"
 
 "@steroidsjs/ckeditor5@^27.0.2-rc.2":
   version "27.0.2-rc.2"
@@ -1896,13 +1896,13 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.4":
-  version "3.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.4.tgz#23217c34c1cc3812926b8b7cdfacb42adfac9a01"
-  integrity sha512-82m5IaGRRnlbtJ5dZS3Y9QQ3EDX7Ka0Ym+sUfu43TNdpED1U8BnMi55+osMxMygcgjTnrG2RpXB8mQO99z57vQ==
+"@steroidsjs/core@^3.0.0-beta.9":
+  version "3.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.9.tgz#ce5227b4b53abdbecc0e701ad04b8292ba25a38e"
+  integrity sha512-hsZn5gJJHt3+ezNgBfMIm2McyeZ28YQD+KP+M6A4HAHuJfSmGoIMX3TRH29ZS+zvkETN2W6njI9pPh/fks75Mg==
   dependencies:
     axios "^0.21.1"
-    connected-react-router "^6.9.1"
+    connected-react-router "^6.9.3"
     domready "^1.0.8"
     dot-prop-immutable "^2.1.0"
     fileup-core "^1.2.7"
@@ -1932,10 +1932,10 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/eslint-config@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/eslint-config/-/eslint-config-2.1.3.tgz#7629ff4e84357aaa1afbba224409bc856b31f6ac"
-  integrity sha512-+UI3knedgMUFjzMz7EVZp6jqCfySGaU2RNj1suY2PBxNFP+dwyMRiXA9aB+581aVMXgr3kn+ObcioeVdr8TFqw==
+"@steroidsjs/eslint-config@^2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/eslint-config/-/eslint-config-2.1.4.tgz#38092cc690cc4b720f5730c470e180d9990c5f6a"
+  integrity sha512-7e0WFQ/wfCSzeUOr0/y58+OXC605vHHtgpWk1ubbKtVXTETbDQF4qHZunLFEVlXlYeSVLvpy5NjZvQuQQcOEaA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.49.0"
     "@typescript-eslint/parser" "^5.49.0"
@@ -2198,7 +2198,7 @@
     anymatch "^3.0.0"
     source-map "^0.6.0"
 
-"@typescript-eslint/eslint-plugin@^5.49.0", "@typescript-eslint/eslint-plugin@^5.51.0":
+"@typescript-eslint/eslint-plugin@^5.49.0":
   version "5.52.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.52.0.tgz#5fb0d43574c2411f16ea80f5fc335b8eaa7b28a8"
   integrity sha512-lHazYdvYVsBokwCdKOppvYJKaJ4S41CgKBcPvyd0xjZNbvQdhn/pnJlGtQksQ/NhInzdaeaSarlBjDXHuclEbg==
@@ -3301,11 +3301,6 @@ boolbase@^1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@^4.5.2:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.1.tgz#bc25380c2c14192374e8dec07cf01b2742d222a2"
-  integrity sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==
-
 bowser@^1.0.0:
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
@@ -3907,6 +3902,17 @@ connected-react-router@^6.9.1:
   version "6.9.2"
   resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-6.9.2.tgz#f89fa87f0e977fcabf17475fb4552e170cc7e48e"
   integrity sha512-bE8kNBiZv9Mivp7pYn9JvLH5ItTjLl45kk1/Vha0rmAK9I/ETb5JPJrAm0h2KCG9qLfv7vqU3Jo4UUDo0oJnQg==
+  dependencies:
+    lodash.isequalwith "^4.4.0"
+    prop-types "^15.7.2"
+  optionalDependencies:
+    immutable "^3.8.1 || ^4.0.0"
+    seamless-immutable "^7.1.3"
+
+connected-react-router@^6.9.3:
+  version "6.9.3"
+  resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-6.9.3.tgz#72300aca9f9d6f38e1f4a2901572faa02adec972"
+  integrity sha512-4ThxysOiv/R2Dc4Cke1eJwjKwH1Y51VDwlOrOfs1LjpdYOVvCNjNkZDayo7+sx42EeGJPQUNchWkjAIJdXGIOQ==
   dependencies:
     lodash.isequalwith "^4.4.0"
     prop-types "^15.7.2"

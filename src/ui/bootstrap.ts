@@ -2,14 +2,15 @@
 /* eslint-disable */
 
 export default {
-    // TODO fix errors in views
-
     'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'content.DropDownView': {lazy: () => require('@steroidsjs/bootstrap/content/DropDown/DropDownView').default},
     'content.AvatarView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarView').default},
     'content.AvatarGroupView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarGroupView').default},
     'content.CalendarView': {lazy: () => require('@steroidsjs/bootstrap/content/Calendar/CalendarView').default},
-    // 'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
+    'content.BadgeView': {lazy: () => require('@steroidsjs/bootstrap/content/Badge/BadgeView').default},
+    'content.AccordionView': {lazy: () => require('@steroidsjs/bootstrap/content/Accordion/AccordionView').default},
+    'content.AccordionItemView': {lazy: () => require('@steroidsjs/bootstrap/content/Accordion/AccordionItemView').default},
+    'content.IconView': {lazy: () => require('@steroidsjs/bootstrap/content/Icon/IconView').default},
     'form.AutoCompleteFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/AutoCompleteField/AutoCompleteFieldView').default},
     'form.ButtonView': {lazy: () => require('@steroidsjs/bootstrap/form/Button/ButtonView').default},
     'content.CardView': {lazy: () => require('@steroidsjs/bootstrap/content/Card/CardView').default},
@@ -41,13 +42,11 @@ export default {
     'format.BooleanFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/BooleanFormatter/BooleanFormatterView').default},
     'format.DefaultFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/DefaultFormatter/DefaultFormatterView').default},
     // 'format.PhotosFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/PhotosFormatter/PhotosFormatterView').default},
-    'icon.IconView': {lazy: () => require('@steroidsjs/bootstrap/icon/Icon/IconView').default},
     'layout.HeaderView': {lazy: () => require('@steroidsjs/bootstrap/layout/Header/HeaderView').default},
     'layout.LoaderView': {lazy: () => require('@steroidsjs/bootstrap/layout/Loader/LoaderView').default},
     'layout.NotificationsView': {lazy: () => require('@steroidsjs/bootstrap/layout/Notifications/NotificationsView').default},
     'layout.NotificationsItemView': {lazy: () => require('@steroidsjs/bootstrap/layout/Notifications/NotificationsItemView').default},
     'layout.TooltipView': {lazy: () => require('@steroidsjs/bootstrap/layout/Tooltip/TooltipView').default},
-    // 'list.AccordionView': {lazy: () => require('@steroidsjs/bootstrap/list/Accordion/AccordionView').default},
     'list.ControlsColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/ControlsColumnView/ControlsColumnView').default},
     'list.CheckboxColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/CheckboxColumn/CheckboxColumnView').default},
     // 'list.DetailView': {lazy: () => require('@steroidsjs/bootstrap/list/Detail/DetailView').default},
@@ -69,4 +68,6 @@ export default {
     'nav.NavListView': {lazy: () => require('@steroidsjs/bootstrap/nav/Nav/NavListView').default},
     'nav.NavTabsView': {lazy: () => require('@steroidsjs/bootstrap/nav/Nav/NavTabsView').default},
     'nav.TreeView': {lazy: () => require('@steroidsjs/bootstrap/nav/Tree/TreeView').default},
+    'typography.TextView': {lazy: () => require('@steroidsjs/bootstrap/typography/Text/TextView').default},
+    'typography.TitleView': {lazy: () => require('@steroidsjs/bootstrap/typography/Title/TitleView').default},
 };
