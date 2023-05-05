@@ -1650,11 +1650,6 @@
   dependencies:
     tslib "^2.4.0"
 
-"@fortawesome/fontawesome-free@^5.15.4":
-  version "5.15.4"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz#ecda5712b61ac852c760d8b3c79c96adca5554e5"
-  integrity sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==
-
 "@gar/promisify@^1.0.1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"
@@ -1816,16 +1811,17 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0 || >=3.0.0-beta.26":
-  version "3.0.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.26.tgz#bee3eeeb0b2d6ec279433ecc77aa96b93ef76796"
-  integrity sha512-IaVgv0lrLaqbSORSy/RlgH4ECWtMuygqWNc5rwlZL6qVW+DDJ1Q+lYyuo0UazyAW1CsDJWGJG7kxn1yQ17pcYw==
+"@steroidsjs/bootstrap@3.0.0-beta.49":
+  version "3.0.0-beta.49"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.49.tgz#070d02852a165f9c586e858b918b918753a78f46"
+  integrity sha512-SbVvaX6XAhzzy2PwYIZVoI3psex5MVLh5RuwImnKtSOPLB2fnrbSpeQowxUejwMTKb4vpJ1zBF20iF79kYjR4w==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
     date-fns "^2.29.3"
     lodash "^4.17.20"
     lodash-es "^4.17.20"
+    normalize.css "^8.0.1"
     rc-slider "^9.7.4"
     react "^18.2.0"
     react-collapse "^5.0.1"
@@ -1896,10 +1892,10 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.11.tgz#d75c593799a3aed1e2e11f49edf3a633735cccc6"
-  integrity sha512-sXJKCnIHo9TDsR23ahWOYMpBzQ3RW+ohlv8qHv1kOn+YUYGXTpdMOIiD1JpNrxlHE1bOkVCuiJcB1vgZJKKw5g==
+"@steroidsjs/core@3.0.0-beta.32":
+  version "3.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.32.tgz#4b4e2dc4ffcff982eaa26fdbc23a4ca33d090b2e"
+  integrity sha512-oVgSVKFyp9mxb1/UWr5XpVDl0idAJj4lSx74JMANLinVHaSaAFm+yGxu58pLB6i42IjFhXzE2FQqreLLhdeeDQ==
   dependencies:
     axios "^0.21.1"
     connected-react-router "^6.9.3"
@@ -8107,6 +8103,11 @@ normalize-url@1.9.1, normalize-url@^1.9.1:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+normalize.css@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
 npm-run-path@^2.0.0:
   version "2.0.2"
