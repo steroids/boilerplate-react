@@ -9,11 +9,13 @@ import {ROUTE_ROOT} from '../../routes';
 
 import './Layout.scss';
 
+export const initAction = (params, dispatch, components) => new Promise((resolve) => resolve(1));
+
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');
 
     //const components = useComponents();
-    const {status} = useLayout(/*() => components.http.post('/api/v1/init')*/);
+    const {status} = useLayout(initAction);
 
     if (status !== STATUS_OK) {
         return status !== STATUS_LOADING ? status : null;

@@ -5,6 +5,8 @@ stages:
 
 variables:
   DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  DEV_SSR_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-master'
+  DEV_SSR_PROCESS: 'projectName-ssr-dev'
 
 lint:
   stage: lint
@@ -42,4 +44,52 @@ deploy_dev:
   script:
     - mkdir -p $DEV_DEPLOY_DIR
     - rsync --recursive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
+
+# .build_ssr:
+#   cache:
+#     paths:
+#       - node_modules
+#   stage: build
+#   artifacts:
+#     paths:
+#       - public
+#       - node_modules
+#   script:
+#     - yarn
+#     - yarn run build-ssr
+#     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
+
+# build_ssr_dev:
+#   extends: .build_ssr
+#   only:
+#     - master
+#   variables:
+#     APP_SSR_PORT: 9910
+#     APP_ENV: preview
+  
+# .deploy_ssr:
+#   stage: deploy
+#   tags:
+#     - dev-server
+#   variables:
+#     GIT_STRATEGY: none
+#   script:
+#     - mkdir -p $DEPLOY_DIR
+#     - rsync
+#       --recursive
+#       --remove-source-files
+#       --include=public/***
+#       --include=node_modules/***
+#       --exclude='*'
+#       --delete
+#       ./ $DEPLOY_DIR
+#     - sudo -i pm2 reload --update-env $SSR_PROCESS_NAME
+
+# deploy_ssr_dev:
+#   extends: .deploy_ssr
+#   only:
+#     - master
+#   variables:
+#     DEPLOY_DIR: $DEV_SSR_DEPLOY_DIR
+#     SSR_PROCESS_NAME: $DEV_SSR_PROCESS
 

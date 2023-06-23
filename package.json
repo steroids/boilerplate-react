@@ -7,19 +7,24 @@
   "scripts": {
     "watch": "node webpack",
     "build": "node webpack production",
-    "lint": "eslint -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src"
+    "lint": "eslint -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src",
+    "server": "node public/server.js",
+    "build-ssr": "node webpack production ssr",
+    "ssr": "npm run build ssr && npm run server"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "^3.0 || >=3.0.0-beta.26",
-    "@steroidsjs/core": "^3.0.0-beta.11",
+    "@steroidsjs/bootstrap": "^3.0 || >=3.0.0-beta.73",
+    "@steroidsjs/core": "^3.0.0-beta.52",
     "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.1",
+    "@steroidsjs/ssr": "^1.1.0",
     "connected-react-router": "^6.9.1",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "@steroidsjs/eslint-config": "^2.1.4",
