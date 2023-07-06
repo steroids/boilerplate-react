@@ -59,6 +59,7 @@ export default {
     'layout.TooltipView': {lazy: () => require('@steroidsjs/bootstrap/layout/Tooltip/TooltipView').default},
     'list.ControlsColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/ControlsColumnView/ControlsColumnView').default},
     'list.CheckboxColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/CheckboxColumn/CheckboxColumnView').default},
+    // 'list.DetailView': {lazy: () => require('@steroidsjs/bootstrap/list/Detail/DetailView').default},
     'list.EmptyView': {lazy: () => require('@steroidsjs/bootstrap/list/Empty/EmptyView').default},
     'list.GridView': {lazy: () => require('@steroidsjs/bootstrap/list/Grid/GridView').default},
     'list.FlexGridView': {lazy: () => require('@steroidsjs/bootstrap/list/FlexGrid/FlexGridView').default},
