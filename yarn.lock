@@ -1826,12 +1826,25 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@3.0.0-beta.74":
-  version "3.0.0-beta.74"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.74.tgz#4597442c57ab19f77a352c73bad5966205c40a36"
-  integrity sha512-g8DF5COD7Izid8IGOqemfqUeeppZPhqUIW2e/HJ16hLiwdR6z2Iavwbu3laaU99OHaXwbAC7rrK/bVRWSX6JVw==
+"@splidejs/react-splide@^0.7.12":
+  version "0.7.12"
+  resolved "https://registry.yarnpkg.com/@splidejs/react-splide/-/react-splide-0.7.12.tgz#c7efe231bbbb6812da64689178b6c871269baff5"
+  integrity sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==
+  dependencies:
+    "@splidejs/splide" "^4.1.3"
+
+"@splidejs/splide@^4.1.3":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
+  integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
+
+"@steroidsjs/bootstrap@3.0.0-beta.85":
+  version "3.0.0-beta.85"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.85.tgz#4aea2ef440e58f1d91ac8d9c6c4d5878f34879af"
+  integrity sha512-EUxoBQ380m6F3vkK49kVU9EnFs49c8yuXvIMmZTcqB5nJI3nBRAx6bziTnyZDmkSa8cnZp+dNvGT8FiWevzbCQ==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
+    "@splidejs/react-splide" "^0.7.12"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
     date-fns "^2.29.3"
     lodash "^4.17.20"
@@ -1908,14 +1921,15 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@3.0.0-beta.54":
-  version "3.0.0-beta.53"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.53.tgz#b0391b94f6938d001d8e4c7a257b4655e43b8430"
-  integrity sha512-Jp8l/B1i8igTm+CRY2uqnBCnGadR4f2sZt1bDG6hlT2cn1wzTUl/PoLZCFZ3cGldfy7RXw4t/TKPmB3dObRpuw==
+"@steroidsjs/core@3.0.0-beta.65":
+  version "3.0.0-beta.65"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.65.tgz#88695ac069b598694952bee9d08c5745b320c3d2"
+  integrity sha512-ygb6RyVNiiVwlwtuSH5CsjWY20CGKsX0VEDJY5caQPbAdGdVaOXFnA8Tc/NWA3ElqidpvtfaD9q0IJ8YHWqvEw==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"
     "@maskito/react" "^0.12.1"
+    "@splidejs/react-splide" "^0.7.12"
     axios "^0.21.1"
     connected-react-router "^6.9.3"
     domready "^1.0.8"
