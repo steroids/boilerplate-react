@@ -1,4 +1,4 @@
-@import 'style/variables';
+@use 'style/variables' as vars;
 
 .Layout {
   .HeaderView__logo-image svg {
