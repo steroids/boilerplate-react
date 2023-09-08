@@ -21,16 +21,7 @@ export default function Layout(props: React.PropsWithChildren<any>) {
 
     return (
         <div className={bem.block()}>
-            <Header
-                logo={{
-                    title: 'Boilerplate12345',
-                }}
-                nav={{
-                    items: ROUTE_ROOT,
-                }}
-            />
             <div className={bem.element('content')}>
-                <Notifications />
                 {props.children}
             </div>
         </div>
