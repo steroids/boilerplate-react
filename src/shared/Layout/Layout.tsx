@@ -5,6 +5,8 @@ import useLayout, {STATUS_OK, STATUS_LOADING} from '@steroidsjs/core/hooks/useLa
 
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
+import Portal from '@steroidsjs/core/ui/layout/Portal';
+import ModalPortal from '@steroidsjs/core/ui/modal/ModalPortal';
 import {ROUTE_ROOT} from '../../routes';
 
 import './Layout.scss';
@@ -32,6 +34,12 @@ export default function Layout(props: React.PropsWithChildren<any>) {
             <div className={bem.element('content')}>
                 <Notifications />
                 {props.children}
+                <ModalPortal />
+                {
+                    process.env.IS_SSR
+                        ? null
+                        : <Portal />
+                }
             </div>
         </div>
     );

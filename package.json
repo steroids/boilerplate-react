@@ -9,10 +9,10 @@
     "build": "node webpack production",
     "lint": "eslint -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src"
   },
-"dependencies": {
+  "dependencies": {
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "3.0.0-beta.87",
-    "@steroidsjs/core": "3.0.0-beta.65",
+    "@steroidsjs/bootstrap": "^3.0.0-beta.97",
+    "@steroidsjs/core": "^3.0.0-beta.79",
     "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.4",
     "connected-react-router": "^6.9.1",
     "lodash": "^4.17.21",
