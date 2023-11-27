@@ -23,7 +23,7 @@ build:
   only:
     - master
   script:
-    - yarn
+    - yarn install --production
     - env > .env
     - export APP_ENV="preview"
     - export APP_BACKEND_URL="https://boilerplate12345.kozhin.dev"
