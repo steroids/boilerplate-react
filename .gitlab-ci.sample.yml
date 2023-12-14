@@ -1,3 +1,4 @@
+
 stages:
   - lint
   - build
@@ -5,6 +6,12 @@ stages:
 
 variables:
   DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  DEV_BACKEND_URL: https://boilerplate12345.kozhin.dev
+#  PROD_DEPLOY_DIR: [prod deploy dir]
+#  PROD_BACKEND_URL: [prod backend url]
+
+
+# Lint stage
 
 lint:
   stage: lint
@@ -12,7 +19,10 @@ lint:
     - yarn
     - yarn lint
 
-build:
+
+# Build stage
+
+.build_template:
   stage: build
   cache:
     paths:
@@ -20,16 +30,29 @@ build:
   artifacts:
     paths:
       - public/
-  only:
-    - master
   script:
     - yarn install --production
-    - env > .env
-    - export APP_ENV="preview"
-    - export APP_BACKEND_URL="https://boilerplate12345.kozhin.dev"
-#    - export APP_SENTRY_DSN="REPLACE_WITH_REAL_SENTRY_DSN"
-    - node webpack production
+    - yarn build
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
+
+build_dev:
+  extends: .build_template
+  only:
+    - master
+  variables:
+    APP_ENV: preview
+    APP_BACKEND_URL: $DEV_BACKEND_URL
+
+#build_prod:
+#  extends: .build_template
+#  only:
+#    - prod
+#  variables:
+#    APP_ENV: production
+#    APP_BACKEND_URL: $PROD_BACKEND_URL
+
+
+# Deploy stage
 
 deploy_dev:
   stage: deploy
@@ -43,3 +66,20 @@ deploy_dev:
     - mkdir -p $DEV_DEPLOY_DIR
     - rsync --recursive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
 
+#deploy_prod:
+#  stage: deploy
+#  only:
+#    - prod
+#  tags:
+#    - [prod runner tag]
+#  variables:
+#    GIT_STRATEGY: none
+#    CURRENT_DIR: $PROD_DEPLOY_DIR/current
+#    PREVIOUS_DIR: $PROD_DEPLOY_DIR/previous
+#    DEPLOY_DIR: $PROD_DEPLOY_DIR/$CI_PIPELINE_ID
+#  script:
+#    - mkdir $DEPLOY_DIR
+#    - rsync --recursive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
+#    - rm -rf $(readlink -f $PREVIOUS_DIR) $PREVIOUS_DIR
+#    - mv $CURRENT_DIR $PREVIOUS_DIR
+#    - ln -s $DEPLOY_DIR $CURRENT_DIR
