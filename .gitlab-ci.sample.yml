@@ -37,6 +37,7 @@ lint:
 
 build_dev:
   extends: .build_template
+  environment: dev
   only:
     - master
   variables:
@@ -45,6 +46,7 @@ build_dev:
 
 #build_prod:
 #  extends: .build_template
+#  environment: production
 #  only:
 #    - prod
 #  variables:
@@ -56,6 +58,7 @@ build_dev:
 
 deploy_dev:
   stage: deploy
+  environment: dev
   only:
     - master
   tags:
@@ -68,6 +71,7 @@ deploy_dev:
 
 #deploy_prod:
 #  stage: deploy
+#  environment: production
 #  only:
 #    - prod
 #  tags:
