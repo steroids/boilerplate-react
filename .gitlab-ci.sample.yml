@@ -83,7 +83,7 @@ deploy_dev:
 #    DEPLOY_DIR: $PROD_DEPLOY_DIR/$CI_PIPELINE_ID
 #  script:
 #    - mkdir -p $DEPLOY_DIR
-#    - rsync --recursive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
+#    - rsync --recursive --remove-source-files --delete ./ $DEPLOY_DIR
 #    - rm -rf $(readlink -f $PREVIOUS_DIR) $PREVIOUS_DIR
 #    - if [ -d "$CURRENT_DIR" ]; then mv $CURRENT_DIR $PREVIOUS_DIR; fi
 #    - ln -s $DEPLOY_DIR $CURRENT_DIR
