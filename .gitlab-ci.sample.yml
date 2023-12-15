@@ -5,7 +5,7 @@ stages:
   - deploy
 
 variables:
-  DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME'
   DEV_BACKEND_URL: https://boilerplate12345.kozhin.dev
 #  PROD_DEPLOY_DIR: [prod deploy dir]
 #  PROD_BACKEND_URL: [prod backend url]
