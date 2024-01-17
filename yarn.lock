@@ -1713,10 +1713,20 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@maskito/core@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@maskito/core/-/core-1.7.0.tgz#e486ca1db2219f03beee5085c362688226fbaeec"
+  integrity sha512-sjdv1MSJnWWor/Qy1u1+ZZtqejzfVt6zqMUfy5RToEPZSBWlsCg1JSfjRu9WRb3yirpZnj3j80JkTGCicFrvuw==
+
 "@maskito/core@^0.12.1":
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/@maskito/core/-/core-0.12.1.tgz#3878661f7ddd9001669a3e5c83fa292e8f9482b1"
   integrity sha512-/Np9ZaRBN2beutO/21yFKm+flBWt5LU7n9GKzSQ30Ia5uCTrkxjNPyyuJCOMCRe/f5Ldt1F9aIpwokZiAKazCg==
+
+"@maskito/kit@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@maskito/kit/-/kit-1.7.0.tgz#0a0085836b64d1813ac465971b23f9901337d172"
+  integrity sha512-LX/ngWFnPKWnQfvU9m5fss8NIBO261DlQdXOtlbhoXgyscVoR8RVeUHRVuRKEhJgd1I+dvlP1vUxms2qltFTjw==
 
 "@maskito/kit@^0.12.1":
   version "0.12.1"
@@ -1845,10 +1855,10 @@
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
   integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
-"@steroidsjs/bootstrap@^3.0.0-beta.97":
-  version "3.0.0-beta.97"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.97.tgz#b6c618a4f4c758e0b285c8b6dbcdb67288c13a14"
-  integrity sha512-6sVxOdFlgzHValgtHkySabkuM3LK3MJW1VkDZ0pQzA33aUY88t6CVu4tRjar04wub8UhIuQ8f+aSvaUABdVEXA==
+"@steroidsjs/bootstrap@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.1.tgz#7d99950be767750af2fdcdc555b8c1eb29653601"
+  integrity sha512-szhIupwuQmtxDEtzbplIEzAxjE6J9G5GPDZPLISNXScqWLbxt5TNksk2HgWtAjHHuXQE+oyk/r0jVxa5Izpg5Q==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@splidejs/react-splide" "^0.7.12"
@@ -1966,17 +1976,18 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/core@^3.0.0-beta.79":
-  version "3.0.0-beta.79"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.79.tgz#41b7ee9febe594a57ec978042edb9061c763e4d9"
-  integrity sha512-ZzwNcbLPrjrBl6A87f04HYEl5OMhMgzgKfm2yoDErUoaX0ge/XRP6FonFImzKBmH0s3i3YaKM189KSnWngeEKg==
+"@steroidsjs/core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.1.tgz#0c9601c33da6e5e24dcec83ba3ce27e3e632bb0e"
+  integrity sha512-E8kqsD1ZEdhcjvd+RL5iTOfKtxfK28RS9pvE7EDiPCcdGyt9FsiFQqozrDXQIPKiYeIPKYNOKsoA1c5tCJpXdw==
   dependencies:
-    "@maskito/core" "^0.12.1"
-    "@maskito/kit" "^0.12.1"
+    "@maskito/core" "1.7.0"
+    "@maskito/kit" "1.7.0"
     "@maskito/react" "^0.12.1"
     "@splidejs/react-splide" "^0.7.12"
     axios "^0.21.1"
     connected-react-router "^6.9.3"
+    dayjs "^1.11.9"
     domready "^1.0.8"
     dot-prop-immutable "^2.1.0"
     fileup-core "^1.2.7"
@@ -1986,7 +1997,6 @@
     load-js "^3.0.3"
     lodash "^4.17.21"
     lodash-es "^4.17.21"
-    moment "^2.29.1"
     path-to-regexp "^1.7.0"
     qs "^6.9.4"
     query-string "^6.14.0"
@@ -4641,6 +4651,11 @@ date-fns@^2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
   integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
+
+dayjs@^1.11.9:
+  version "1.11.10"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.10.tgz#68acea85317a6e164457d6d6947564029a6a16a0"
+  integrity sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
