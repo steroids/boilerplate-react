@@ -7,8 +7,12 @@ stages:
 variables:
   DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME'
   DEV_BACKEND_URL: https://boilerplate12345.kozhin.dev
+  DEV_SSR_PROCESS: 'boilerplate12345-ssr-dev'
+  DEV_SSR_PORT: 9910
 #  PROD_DEPLOY_DIR: [prod deploy dir]
 #  PROD_BACKEND_URL: [prod backend url]
+#  PROD_SSR_PROCESS: [prod pm2 process name]
+#  PROD_SSR_PORT: [prod ssr port]
 
 
 # Lint stage
@@ -29,10 +33,11 @@ lint:
       - node_modules
   artifacts:
     paths:
-      - public/
+      - public
+      - node_modules
   script:
     - yarn install --production
-    - yarn build
+    - yarn run build-ssr
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
 
 build_dev:
@@ -41,6 +46,7 @@ build_dev:
   only:
     - master
   variables:
+    APP_SSR_PORT: $DEV_SSR_PORT
     APP_ENV: preview
     APP_BACKEND_URL: $DEV_BACKEND_URL
 
@@ -52,6 +58,7 @@ build_dev:
 #  variables:
 #    APP_ENV: production
 #    APP_BACKEND_URL: $PROD_BACKEND_URL
+#    APP_SSR_PORT: $PROD_SSR_PORT
 
 
 # Deploy stage
@@ -68,6 +75,7 @@ deploy_dev:
   script:
     - mkdir -p $DEV_DEPLOY_DIR
     - rsync --recursive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
+    - sudo -i pm2 reload --update-env $DEV_SSR_PROCESS
 
 #deploy_prod:
 #  stage: deploy
@@ -87,3 +95,4 @@ deploy_dev:
 #    - rm -rf $(readlink -f $PREVIOUS_DIR) $PREVIOUS_DIR
 #    - if [ -d "$CURRENT_DIR" ]; then mv $CURRENT_DIR $PREVIOUS_DIR; fi
 #    - ln -s $DEPLOY_DIR $CURRENT_DIR
+#    - sudo -i pm2 reload --update-env $PROD_SSR_PROCESS
