@@ -1401,10 +1401,10 @@
     react-transition-group "^2.9.0"
     react-use "^17.4.0"
 
-"@steroidsjs/core@^3.0.11":
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.11.tgz#cd1255b2b4dee602077a7be27d3da04a2c94d23b"
-  integrity sha512-KaZrUgsbM8BJZU9eEGbpJn6WTSHiXrpjw+RdrLjBG33a0Fw5d/YyqddKY+ltSY20RPmcuJr/1z0tCfDTo2eqtA==
+"@steroidsjs/core@^3.0.13":
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.13.tgz#19a3032e2a8a2ebcec985378a04e3e030e71e163"
+  integrity sha512-cPUfab09LMzXKBtyFR4Utakue3aZbrseMh1Zr9b++yL1xJ7sQNgcDXvikOKBE40ljIao3iz6PtpHe3e/MmKnfg==
   dependencies:
     "@maskito/core" "1.7.0"
     "@maskito/kit" "1.7.0"
