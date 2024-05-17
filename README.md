@@ -29,6 +29,28 @@ yarn watch
 
 Приложение будет доступно по адресу: http://localhost:9991/
 
+## Разработка SSR-приложения
+
+Сборка приложения для запуска на бэкенде:
+```shell
+yarn build-ssr
+```
+
+Запуск SSR-сервера:
+```shell
+yarn server
+```
+
+Общая команда для сборки и запуска SSR-сервера:
+```shell
+yarn ssr
+```
+
+Запуск SSR-сервера с отслеживанием измененных файлов (для разработки):
+```shell
+yarn watch-ssr
+```
+
 ### Включение eslint в IDE
 
 Для WebStorm/PhpStorm идем в `Настройки` -> `Languages & Frameworks` -> `Code Quality Tools` -> `ESLint`
