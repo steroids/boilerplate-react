@@ -13,6 +13,9 @@
     "watch-ssr": "npx nodemon --watch ./src --ext \"ts,tsx,scss\" --exec \"npm run ssr\"\n",
     "ssr": "npm run build ssr && npm run server"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@sentry/browser": "^5.27.3",
     "@steroidsjs/bootstrap": "^3.0.10",
