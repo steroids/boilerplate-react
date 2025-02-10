@@ -1730,7 +1730,7 @@
     eslint-plugin-react "^7.32.2"
     eslint-plugin-react-hooks "^4.6.0"
 
-"@steroidsjs/webpack@4.1.0":
+"@steroidsjs/webpack@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-4.1.0.tgz#38bd02b778fc85dbdb42af815bd05729e5cd154a"
   integrity sha512-gkrjQOb51rWByuBHECcKwk7DU+9Zrkb935suXhRLXEStJmVdhTlJyb9Dsv6Ns/+GQyiRlX96Vd1CpBkIa9YOfw==
@@ -4114,6 +4114,14 @@ eslint-config-airbnb@^19.0.4:
     eslint-config-airbnb-base "^15.0.0"
     object.assign "^4.1.2"
     object.entries "^1.1.5"
+
+eslint-formatter-gitlab@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-formatter-gitlab/-/eslint-formatter-gitlab-5.1.0.tgz#33162a17eefba5a44a257af568511d360212e866"
+  integrity sha512-IxhrjLYzDlbFgPWEnvZlWLwPjMeyymbyo0hDHWntZ3DSAP9AP9huj15KbU+BK3OqeO3OHhbFEh2TA6sR0KZhkA==
+  dependencies:
+    chalk "^4.0.0"
+    yaml "^2.0.0"
 
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
@@ -8841,6 +8849,11 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
+
+yaml@^2.0.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.0.tgz#aef9bb617a64c937a9a748803786ad8d3ffe1e98"
+  integrity sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==
 
 yargs-parser@^20.2.9:
   version "20.2.9"

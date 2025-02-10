@@ -7,7 +7,7 @@
   "scripts": {
     "watch": "node webpack",
     "build": "node webpack production",
-    "lint": "eslint -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src"
+    "lint": "eslint --format gitlab -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src"
   },
   "engines": {
     "node": ">=18"
@@ -30,6 +30,7 @@
     "@types/react-dom": "^18.0.10",
     "@types/webpack-env": "^1.15.1",
     "eslint": "^8.34.0",
+    "eslint-formatter-gitlab": "^5.1.0",
     "typescript": "^4.9.5"
   }
 }
