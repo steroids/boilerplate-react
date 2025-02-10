@@ -10,7 +10,7 @@
     "lint": "eslint -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=18"
   },
   "dependencies": {
     "@sentry/browser": "^5.27.3",
