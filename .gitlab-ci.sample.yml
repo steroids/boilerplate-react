@@ -22,7 +22,9 @@ lint:
   script:
     - yarn
     - yarn lint
-
+  artifacts:
+    reports:
+      codequality: gl-codequality.json
 
 # Build stage
 
