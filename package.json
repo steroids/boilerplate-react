@@ -10,7 +10,7 @@
     "lint": "eslint --format gitlab -c ./.eslintrc --ext .js,.jsx,.ts,.tsx ./src"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "dependencies": {
     "@sentry/browser": "^5.27.3",
