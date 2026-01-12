@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "3.0.30",
-    "@steroidsjs/core": "3.0.53",
+    "@steroidsjs/bootstrap": "3.0.42",
+    "@steroidsjs/core": "3.0.83",
     "@steroidsjs/webpack": "^4.1.0",
     "connected-react-router": "^6.9.1",
     "lodash": "^4.17.21",
@@ -24,7 +24,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@steroidsjs/eslint-config": "3.0.1",
+    "@steroidsjs/eslint-config": "^3.0.4",
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
