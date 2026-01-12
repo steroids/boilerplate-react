@@ -14,7 +14,7 @@
     "ssr": "npm run build ssr && npm run server"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "dependencies": {
     "@sentry/browser": "^5.27.3",
