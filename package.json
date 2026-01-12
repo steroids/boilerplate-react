@@ -14,12 +14,12 @@
     "ssr": "npm run build ssr && npm run server"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "dependencies": {
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "^3.0.10",
-    "@steroidsjs/core": "3.0.53",
+    "@steroidsjs/bootstrap": "3.0.42",
+    "@steroidsjs/core": "3.0.83",
     "@steroidsjs/ssr": "^3.0.1",
     "@steroidsjs/webpack": "^4.1.0",
     "connected-react-router": "^6.9.1",
@@ -30,7 +30,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
-    "@steroidsjs/eslint-config": "3.0.1",
+    "@steroidsjs/eslint-config": "^3.0.4",
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
