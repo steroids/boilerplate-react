@@ -1389,7 +1389,7 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/eslint-config@3.0.4":
+"@steroidsjs/eslint-config@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@steroidsjs/eslint-config/-/eslint-config-3.0.4.tgz#601459227da12ca480cb2c14a480123396838eaa"
   integrity sha512-A685mKvAh9kBfogKEESGDrxZMJFmyNc/PBCzaqCgUTiFFsfT1FrrPGOltLKzNb48euHV1P9kMoCEPJF/OqdISQ==
