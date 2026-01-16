@@ -1,6 +1,7 @@
-import useApplication from '@steroidsjs/core/hooks/useApplication';
 import HttpComponent from '@steroidsjs/core/components/HttpComponent';
 import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
+import useApplication from '@steroidsjs/core/hooks/useApplication';
+
 import customIcons from 'icons/index';
 
 import 'style/index.scss';
