@@ -1,12 +1,11 @@
-import * as React from 'react';
-
 import {useBem} from '@steroidsjs/core/hooks';
 import useLayout, {STATUS_OK, STATUS_LOADING} from '@steroidsjs/core/hooks/useLayout';
-
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
 import Portal from '@steroidsjs/core/ui/layout/Portal';
 import ModalPortal from '@steroidsjs/core/ui/modal/ModalPortal';
+import * as React from 'react';
+
 import {ROUTE_ROOT} from '../../routes';
 
 import './Layout.scss';
@@ -15,6 +14,7 @@ export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');
 
     //const components = useComponents();
+    // eslint-disable-next-line no-inline-comments
     const {status} = useLayout(/*() => components.http.post('/api/v1/init')*/);
 
     if (status !== STATUS_OK) {
