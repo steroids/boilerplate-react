@@ -1,4 +1,5 @@
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
+
 import IndexPage from './IndexPage';
 
 export const ROUTE_ROOT = 'root';
