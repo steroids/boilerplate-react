@@ -1,3 +1,7 @@
 {
-  "extends": "@steroidsjs/eslint-config"
+  "extends": "@steroidsjs/eslint-config/frontend",
+  "plugins": ["boilerplate-custom-rules"],
+  "rules": {
+    "boilerplate-custom-rules/multiline-hook-args": "error"
+  }
 }
