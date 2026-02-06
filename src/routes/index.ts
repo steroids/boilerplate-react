@@ -1,9 +1,10 @@
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
+
 import IndexPage from './IndexPage';
 
 export const ROUTE_ROOT = 'root';
 
-const roles = [null];
+const roles:Array<string | null> = [null];
 
 export default {
     id: ROUTE_ROOT,

@@ -1,11 +1,12 @@
-import useApplication from '@steroidsjs/core/hooks/useApplication';
 import HttpComponent from '@steroidsjs/core/components/HttpComponent';
 import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
+import useApplication, {IApplicationHookConfig} from '@steroidsjs/core/hooks/useApplication';
+
 import customIcons from 'icons/index';
 
 import 'style/index.scss';
 
-export const config = {
+export const config:IApplicationHookConfig = {
     reducers: require('@steroidsjs/core/reducers').default,
     routes: () => require('routes').default,
     layoutView: () => require('shared/Layout').default,
@@ -15,10 +16,12 @@ export const config = {
         http: HttpComponent,
     },
     onInit: ({ui}) => {
-        ui.addViews(require('./ui/bootstrap').default);
-        ui.addFields(require('@steroidsjs/core/ui/form').default);
-        ui.addFormatters(require('@steroidsjs/core/ui/format').default);
-        ui.addIcons(require('@steroidsjs/bootstrap/icons/index').default(customIcons));
+        if (ui) {
+            ui.addViews(require('./ui/bootstrap').default);
+            ui.addFields(require('@steroidsjs/core/ui/form').default);
+            ui.addFormatters(require('@steroidsjs/core/ui/format').default);
+            ui.addIcons(require('@steroidsjs/bootstrap/icons/index').default(customIcons));
+        }
     },
 };
 
