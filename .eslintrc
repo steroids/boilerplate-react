@@ -1,9 +1,3 @@
 {
-  "extends": "@steroidsjs/eslint-config/frontend",
-  "rules": {
-    // Временное правило. Удалить после перехода на @steroidsjs/eslint-config@3.0.3 и выше
-    "prettier/prettier" : "off",
-    // Временное правило. Удалить после перехода на @steroidsjs/eslint-config@3.0.3 и выше
-    "react/react-in-jsx-scope": "off"
-  }
+  "extends": "@steroidsjs/eslint-config/frontend"
 }

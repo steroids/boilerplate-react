@@ -1,4 +1,5 @@
 import {useBem} from '@steroidsjs/core/hooks';
+import * as React from 'react';
 
 import './IndexPage.scss';
 
