@@ -6,7 +6,6 @@ import {
     InputField,
 } from '@steroidsjs/core/ui/form';
 import {MASK_PRESETS} from '@steroidsjs/core/ui/form/InputField/InputField';
-import React from 'react';
 
 import {ROUTE_USERS} from '../index';
 

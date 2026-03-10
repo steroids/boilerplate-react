@@ -3,7 +3,6 @@ import {useDispatch} from '@steroidsjs/core/hooks';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Button} from '@steroidsjs/core/ui/form';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
-import React from 'react';
 
 import './Sidebar.scss';
 
