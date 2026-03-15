@@ -1,0 +1,42 @@
+@import 'style/variables';
+
+.LayoutContent {
+  min-height: 100%;
+
+  &__content {
+    width: 100%;
+
+    & .CardView__content-inner > .GridView > .GridView__table {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__tabs {
+    margin-left: 15px;
+    margin-top: 30px;
+
+    .NavTabsView__list {
+      border-bottom: none;
+    }
+
+    .NavTabsView__list-item {
+      background-color: #fff;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      margin-left: 3px;
+
+      a {
+        padding: 12px 24px !important;
+      }
+      .ButtonView__link {
+        padding: 12px 0 !important;
+      }
+    }
+  }
+
+  .CardView__content-inner {
+    row-gap: 0;
+  }
+
+}

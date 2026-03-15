@@ -8,7 +8,7 @@ export default function IndexPage() {
 
     return (
         <div className={bem.block()}>
-            Hello!
+            &nbsp;
         </div>
     );
 }

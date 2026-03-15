@@ -1,7 +1,36 @@
 @use "style/variables";
 
+body {
+    background-color: #F5F7FB;
+}
+
 .Layout {
-    .HeaderView__logo-image svg {
-        width: 20px;
+    &__loader {
+        padding: 50px;
+    }
+
+    &__loader-status {
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    &__sidebar {
+        width: 280px;
+
+        > .Sidebar {
+            position: fixed;
+        }
+    }
+
+    &__content {
+        width: calc(100% - 320px);
+        padding: 0 20px;
+        margin: 20px auto;
+        max-width: 1600px;
     }
 }

@@ -1,0 +1,39 @@
+@use 'style/variables';
+
+.PermissionTreeFieldView {
+  width: 70%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: 1px solid #d6dadd;
+  border-radius: variables.$radius-large;
+  overflow: hidden;
+
+  td:not(:last-child) {
+    border-right: 1px solid #d6dadd;
+  }
+
+  tr:not(:last-child) > td,
+  tr:not(:last-child) > td,
+  tbody:not(:last-child) {
+    border-bottom: 1px solid #d6dadd;
+  }
+
+  tr:last-child > td {
+    &:first-child {
+      border-bottom-left-radius: variables.$radius-large;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: variables.$radius-large;
+    }
+  }
+
+  tr > td:last-child {
+    flex-grow: 1;
+  }
+
+  td {
+    padding: 16px;
+    height: 55px;
+  }
+}

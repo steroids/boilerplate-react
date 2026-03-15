@@ -3,6 +3,7 @@
 @use '~@steroidsjs/bootstrap/scss/normalize';
 @use '~@steroidsjs/bootstrap/scss/fonts';
 @use '~@steroidsjs/bootstrap/scss/animations';
+@use '~@steroidsjs/bootstrap/scss/bootstrap-classes';
 
 @use 'variables';
 
@@ -104,3 +105,16 @@
 @use '~@steroidsjs/bootstrap/nav/ButtonGroup/ButtonGroupView';
 @use '~@steroidsjs/bootstrap/typography/Text/TextView';
 @use '~@steroidsjs/bootstrap/typography/Title/TitleView';
+
+
+.GridView__column .NavIconView__list {
+  column-gap: 8px;
+
+  .ControlsColumnView .ButtonView {
+    display: flex;
+  }
+
+  .NavIconView__list-item-nested {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+@use 'style/variables';
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 280px;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: variables.$element-background-color;
+  border-right: 1px solid variables.$element-placeholder-color-disabled;
+
+  &__logo {
+    width: 100%;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__nav-items {
+    margin-bottom: 20px;
+  }
+
+  &__nav-title {
+    padding: 10px 0;
+    font-weight: bold;
+  }
+
+  &__nav-link {
+
+    .ButtonView {
+      padding: 10px 0 10px 20px;
+      display: block;
+    }
+
+    &_active .ButtonView, .ButtonView:hover {
+      background-color: #F5F7FB;
+    }
+
+  }
+
+
+}
