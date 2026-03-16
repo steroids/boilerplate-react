@@ -1,0 +1,29 @@
+@import 'style/variables';
+
+.ProjectMembersPage {
+  &__filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .GridView__table {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &_grid {
+
+    tr {
+      &:has(.not-active) {
+        td {
+          color: #b4b4b4;
+        }
+      }
+    }
+  }
+
+  &_search-form {
+    display: flex;
+  }
+}

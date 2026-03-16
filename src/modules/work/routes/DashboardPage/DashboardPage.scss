@@ -1,0 +1,32 @@
+@import 'style/variables';
+
+.ProjectsPage {
+  &__image {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__grid-remove-icon {
+    outline: none;
+  }
+
+  &__form-checkbox {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
