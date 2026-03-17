@@ -1,4 +1,4 @@
-import {IRouteItem, ROUTER_ROLE_LOGIN} from '@steroidsjs/core/ui/nav/Router/Router';
+import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
 
 import {LAYOUT_AUTH} from 'config/layouts';
 import {ROUTE_LOGIN, ROUTE_ROOT} from 'modules/main/constants/routes';
@@ -12,7 +12,7 @@ export default {
     exact: true,
     path: '/',
     component: IndexPage,
-    roles: [PERMISSION_AUTH_AUTHORIZED],
+    roles: [PERMISSION_AUTH_AUTHORIZED, null],
     items: {
         [ROUTE_LOGIN]: {
             label: __('Авторизация'),
@@ -21,7 +21,6 @@ export default {
             component: LoginPage,
             layout: LAYOUT_AUTH,
             isNavVisible: false,
-            role: ROUTER_ROLE_LOGIN,
             roles: [null],
         },
     },
