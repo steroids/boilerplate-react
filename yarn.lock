@@ -1344,10 +1344,10 @@
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
   integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
-"@steroidsjs/bootstrap@3.0.42":
-  version "3.0.42"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.42.tgz#2a9c5bcb31247553ed88755c5f8b8fdcf08600c6"
-  integrity sha512-6/AnXmskD4lHM8ep6u9X/9EQlJf4zw2gyW1vp1tOys+O/jYSolIqRAfnbauK3kblWTXjpYCoIPhdvnI09ehkOw==
+"@steroidsjs/bootstrap@3.0.45":
+  version "3.0.45"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.45.tgz#d2291cbb8f0527fdb9eb20274dbe406460d505f7"
+  integrity sha512-K1FlR8EjXp7L8Tzir/7hc4W00VHFQ9n64Tq1ddqy74GiL22oC4izg/eDdNds4WZEEblgFFQREO1XauopNLnLIg==
   dependencies:
     "@splidejs/react-splide" "^0.7.12"
     date-fns "^2.29.3"
@@ -1403,10 +1403,10 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/core@3.0.83":
-  version "3.0.83"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.83.tgz#b3a5d078136451ae6f2221452a0d5408e25a01a6"
-  integrity sha512-JxyCFONcc3oM8Ez/mzYPpIfJK3yLkOjuMwFeRKCRpJSHAQ6IHD9A/vgciJM8c9rQuhnuQzT2t5WdvoobWsYb1Q==
+"@steroidsjs/core@3.0.94":
+  version "3.0.94"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.94.tgz#d142eb317883f6b9780ace01fdbd2b8888bd4a21"
+  integrity sha512-9hxzbrK2BfXW7Bdqcalu8kHhFVJhb3jjmJilj/TO4nZ5KwkjpEwwen5w3jDvkT8eXPQCOGulO0/Uf1KrMsuSrg==
   dependencies:
     "@maskito/core" "2.3.1"
     "@maskito/kit" "2.3.1"
@@ -1424,9 +1424,8 @@
     load-js "^3.0.3"
     lodash "^4.17.21"
     lodash-es "^4.17.21"
-    path-to-regexp "^1.7.0"
-    qs "^6.9.4"
-    query-string "^6.14.0"
+    path-to-regexp "1.9.0"
+    qs "^6.15.0"
     react "^18.2.0"
     react-click-outside "^3.0.1"
     react-day-picker "^8.7.1"
@@ -6290,7 +6289,7 @@ path-scurry@^1.11.1, path-scurry@^1.6.1:
     lru-cache "^10.2.0"
     minipass "^5.0.0 || ^6.0.2 || ^7.0.0"
 
-path-to-regexp@^1.7.0:
+path-to-regexp@1.9.0, path-to-regexp@^1.7.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.9.0.tgz#5dc0753acbf8521ca2e0f137b4578b917b10cf24"
   integrity sha512-xIp7/apCFJuUHdDLWe8O1HIkb0kQrOMb/0u6FXQjemHn/ii5LrIzU6bdECnsiTF/GjZkMEKg1xdiZwNqDYlZ6g==
@@ -6737,6 +6736,13 @@ qs@^6.12.3, qs@^6.9.4, qs@~6.14.0:
   version "6.14.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.1.tgz#a41d85b9d3902f31d27861790506294881871159"
   integrity sha512-4EK3+xJl8Ts67nLYNwqw/dsFVnCf+qR7RgXSK9jEEm9unao3njwMDdmsdvoKBKHzxd7tCYz5e5M+SnMjdtXGQQ==
+  dependencies:
+    side-channel "^1.1.0"
+
+qs@^6.15.0:
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.15.0.tgz#db8fd5d1b1d2d6b5b33adaf87429805f1909e7b3"
+  integrity sha512-mAZTtNCeetKMH+pSjrb76NAM8V9a05I9aBZOHztWy/UqcJdQYNsf59vrRKWnojAT9Y+GbIvoTBC++CPHqpDBhQ==
   dependencies:
     side-channel "^1.1.0"
 
