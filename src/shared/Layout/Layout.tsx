@@ -6,13 +6,14 @@ import Header from '@steroidsjs/core/ui/layout/Header';
 import Portal from '@steroidsjs/core/ui/layout/Portal';
 import ModalPortal from '@steroidsjs/core/ui/modal/ModalPortal';
 import * as React from 'react';
+import {PropsWithChildren} from 'react';
 
 import {ROUTE_ROOT} from '../../routes';
 import Sidebar from './views/Sidebar';
 
 import './Layout.scss';
 
-export default function Layout(props: React.PropsWithChildren<any>) {
+export default function Layout(props: PropsWithChildren<any>) {
     const bem = useBem('Layout');
 
     //const components = useComponents();
