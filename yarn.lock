@@ -1344,15 +1344,14 @@
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
   integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
-"@steroidsjs/bootstrap@3.0.45":
-  version "3.0.45"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.45.tgz#d2291cbb8f0527fdb9eb20274dbe406460d505f7"
-  integrity sha512-K1FlR8EjXp7L8Tzir/7hc4W00VHFQ9n64Tq1ddqy74GiL22oC4izg/eDdNds4WZEEblgFFQREO1XauopNLnLIg==
+"@steroidsjs/bootstrap@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.1.0.tgz#a8a682d255c84e8e2d395578f417a707d1b35c87"
+  integrity sha512-bv5XXwUoEbXdfsTM4Z6LtwtDAED37yfjr/oQR/WvFHIgzAdvUDutDykpk5ZKrALK5AHnl6X0bod18LqYvc3exA==
   dependencies:
     "@splidejs/react-splide" "^0.7.12"
     date-fns "^2.29.3"
-    lodash "^4.17.20"
-    lodash-es "^4.17.20"
+    lodash-es "^4.17.23"
     normalize.css "^8.0.1"
     rc-slider "^9.7.4"
     react "^18.2.0"
@@ -1403,10 +1402,10 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/core@3.0.94":
-  version "3.0.94"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.94.tgz#d142eb317883f6b9780ace01fdbd2b8888bd4a21"
-  integrity sha512-9hxzbrK2BfXW7Bdqcalu8kHhFVJhb3jjmJilj/TO4nZ5KwkjpEwwen5w3jDvkT8eXPQCOGulO0/Uf1KrMsuSrg==
+"@steroidsjs/core@3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.1.1.tgz#d495dd0d2f9ad6ee0ebcd596ca0b423bc9919f2f"
+  integrity sha512-1hHE0kFx75C5KtmQJI6Ju2v/hGow13NH/UJLiHLfzCUe5OW0nOC+iT5zZiejXMkOrF2k84SiKrWgNXUjFFCnSA==
   dependencies:
     "@maskito/core" "2.3.1"
     "@maskito/kit" "2.3.1"
@@ -1460,10 +1459,10 @@
     prettier-eslint "^16.3.0"
     typescript "^4.9.5"
 
-"@steroidsjs/ssr@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/ssr/-/ssr-3.0.1.tgz#24866424cc69c926d34a67dc398b9c00ed6b4946"
-  integrity sha512-+bifSUu6dTa7UJAPhoUZ2eG3Fqmvh7ylZUWMQwyY2FFHHqRcSciTresA7KaRcUuyMjGCew8XSCHs8cZIVS7O5A==
+"@steroidsjs/ssr@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/ssr/-/ssr-3.0.4.tgz#f5bade85d0317e2c657077948d6d9d9589f2256c"
+  integrity sha512-VJ80gZfpxFR4vEICNB4GSOnmktBQ0iHSmPTYTNCSQAuPXzwr4sYLQ66w/ozaLx90HhV3Q6zAmTI7qKKSPckvvw==
   dependencies:
     "@steroidsjs/core" "3.0.0-beta.52"
     "@types/express" "^4.17.12"
@@ -1477,10 +1476,10 @@
     react-router "^5.2.0"
     url-loader "^4.1.1"
 
-"@steroidsjs/webpack@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-4.1.0.tgz#38bd02b778fc85dbdb42af815bd05729e5cd154a"
-  integrity sha512-gkrjQOb51rWByuBHECcKwk7DU+9Zrkb935suXhRLXEStJmVdhTlJyb9Dsv6Ns/+GQyiRlX96Vd1CpBkIa9YOfw==
+"@steroidsjs/webpack@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-4.1.1.tgz#212e73045a8b00aea373efe4f4b5cf9a1b3f3e0a"
+  integrity sha512-L31X8bDVPg45D6ydqnnL2G7Wr23YqUem3ayPkvAwkB/fkxYB2AK3O8rULWbhAPrJUq95+TfdNvitJJNUP2OcWw==
   dependencies:
     "@babel/core" "^7.24.0"
     "@babel/eslint-parser" "^7.23.10"
@@ -5543,7 +5542,7 @@ locate-path@^7.1.0:
   dependencies:
     p-locate "^6.0.0"
 
-lodash-es@^4.17.20, lodash-es@^4.17.21:
+lodash-es@^4.17.21:
   version "4.17.22"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.22.tgz#eb7d123ec2470d69b911abe34f85cb694849b346"
   integrity sha512-XEawp1t0gxSi9x01glktRZ5HDy0HXqrM0x5pXQM98EaI0NxO6jVM7omDOxsuEo5UIASAnm2bRp1Jt/e0a2XU8Q==
