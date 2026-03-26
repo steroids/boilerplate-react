@@ -5,7 +5,6 @@ import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
 import Portal from '@steroidsjs/core/ui/layout/Portal';
 import ModalPortal from '@steroidsjs/core/ui/modal/ModalPortal';
-import * as React from 'react';
 import {PropsWithChildren} from 'react';
 
 import {ROUTE_ROOT} from '../../routes';
