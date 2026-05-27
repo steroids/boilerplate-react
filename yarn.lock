@@ -1476,10 +1476,10 @@
     react-router "^5.2.0"
     url-loader "^4.1.1"
 
-"@steroidsjs/webpack@4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-4.1.1.tgz#212e73045a8b00aea373efe4f4b5cf9a1b3f3e0a"
-  integrity sha512-L31X8bDVPg45D6ydqnnL2G7Wr23YqUem3ayPkvAwkB/fkxYB2AK3O8rULWbhAPrJUq95+TfdNvitJJNUP2OcWw==
+"@steroidsjs/webpack@4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/webpack/-/webpack-4.1.2.tgz#48389aa39715da1f8035c77117a59d46a1176e3b"
+  integrity sha512-T9nmImoC1MvtSl7UppXNQzuZ4PTNaR2U+kIQcqgVznJXN95WzoWQZu/JaNBxrE0McPHx96mT25ZCKsEwcXytQA==
   dependencies:
     "@babel/core" "^7.24.0"
     "@babel/eslint-parser" "^7.23.10"
