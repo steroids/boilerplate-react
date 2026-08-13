@@ -77,7 +77,7 @@ deploy_dev:
   script:
     - mkdir -p $DEV_DEPLOY_DIR
     - rsync --archive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
-    - sudo -i pm2 reload --update-env $DEV_SSR_PROCESS
+#    - sudo -H pm2 reload --update-env $DEV_SSR_PROCESS
 
 #deploy_prod:
 #  stage: deploy
@@ -97,4 +97,4 @@ deploy_dev:
 #    - rm -rf $(readlink -f $PREVIOUS_DIR) $PREVIOUS_DIR
 #    - if [ -d "$CURRENT_DIR" ]; then mv $CURRENT_DIR $PREVIOUS_DIR; fi
 #    - ln -s $DEPLOY_DIR $CURRENT_DIR
-#    - sudo -i pm2 reload --update-env $PROD_SSR_PROCESS
+#    - sudo -H pm2 reload --update-env $PROD_SSR_PROCESS
